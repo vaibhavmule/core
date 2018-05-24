@@ -26,6 +26,7 @@ setup(
         'python-dotenv==0.7.1',
         'passlib==1.7.1',
         'whitenoise==3.3.1',
+        'pycparser',
         'bcrypt==3.1.4',
         'pytest==3.3.1',
         'orator==0.9.7',
