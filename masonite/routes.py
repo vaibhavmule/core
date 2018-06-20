@@ -5,7 +5,6 @@ import json
 
 from pydoc import locate
 
-from config import middleware
 from masonite.exceptions import RouteMiddlewareNotFound
 
 
@@ -190,8 +189,9 @@ class BaseHttpRoute:
         for arg in self.list_middleware:
 
             # Locate the middleware based on the string specified
+            
             try:
-                located_middleware = self.request.app().resolve(locate(middleware.ROUTE_MIDDLEWARE[arg]))
+                located_middleware = self.request.app().resolve(locate(self.request.app().make('RouteMiddleware')[arg]))
             except KeyError:
                 raise RouteMiddlewareNotFound("Could not find the '{0}' route middleware".format(arg))
 
