@@ -9,7 +9,6 @@ class SassProvider(ServiceProvider):
     wsgi = False
 
     def register(self):
-
         """Compile Sass.
 
             Compile Sass if the libsass module is installed. Once installed, all
