@@ -15,7 +15,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
     """
 
     def __init__(self, app: App):
-        """Cache disk driver constructor
+        """Cache disk driver constructor.
 
         Arguments:
             CacheConfig {config.cache} -- Cache configuration module.
@@ -105,7 +105,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
 
     def get(self, key):
         """
-        Get the data from a key in the cache
+        Get the data from a key in the cache.
         """
         if not self.is_valid(key):
             return None
@@ -127,7 +127,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
 
     def delete(self, key):
         """
-        Delete file cache
+        Delete file cache.
         """
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:
@@ -140,7 +140,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
 
     def update(self, key, value, location=None):
         """
-            Updates a specific cache by key
+            Updates a specific cache by key.
         """
         if not location:
             location = self.config.DRIVERS['disk']['location'] + "/"
@@ -154,7 +154,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
 
     def exists(self, key):
         """
-        Check if the cache exists
+        Check if the cache exists.
         """
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:
@@ -169,7 +169,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
 
     def is_valid(self, key):
         """
-        Check if a valid cache
+        Check if a valid cache.
         """
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:

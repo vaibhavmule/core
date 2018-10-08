@@ -1,4 +1,4 @@
-"""Extendable Module"""
+"""Extendable Module."""
 
 import inspect
 

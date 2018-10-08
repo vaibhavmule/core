@@ -1,10 +1,10 @@
-"""Time Module"""
+"""Time Module."""
 
 import pendulum
 
 
 def cookie_expire_time(str_time):
-    """Takes a string like 1 month or 5 minutes and returns a pendulum instance
+    """Takes a string like 1 month or 5 minutes and returns a pendulum instance.
 
     Arguments:
         str_time {string} -- Could be values like 1 second or 3 minutes

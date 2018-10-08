@@ -1,4 +1,4 @@
-"""Cryptographic Signing Module"""
+"""Cryptographic Signing Module."""
 import binascii
 
 from cryptography.fernet import Fernet
@@ -11,7 +11,7 @@ class Sign:
     """
 
     def __init__(self, key=None):
-        """Sign constructor
+        """Sign constructor.
 
         Keyword Arguments:
             key {string} -- The secret key to use. If nothing is passed it then it will use

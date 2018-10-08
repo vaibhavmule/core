@@ -1,4 +1,4 @@
-"""Helper Functions for RouteProvider"""
+"""Helper Functions for RouteProvider."""
 
 import re
 
@@ -132,7 +132,7 @@ def group(url, route_list):
 
 
 def compile_route_to_regex(route):
-    """Compiles a route to regex
+    """Compiles a route to regex.
 
     Arguments:
         route {masonite.routes.Route} -- The Masonite route object
@@ -174,7 +174,7 @@ def compile_route_to_regex(route):
 
 
 def create_matchurl(router, route):
-    """Creates a regex string for router.url to be matched against
+    """Creates a regex string for router.url to be matched against.
 
     Arguments:
         router {masonite.routes.Route} -- The Masonite route object

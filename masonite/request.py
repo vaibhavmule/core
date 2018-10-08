@@ -1,4 +1,5 @@
-"""
+"""Request Module.
+
 Request Module handles many different aspects of a single request
 Methods which require the request and help ease development should
 be put here.
@@ -37,7 +38,8 @@ class Request(Extendable):
     statuses = response_statuses()
 
     def __init__(self, environ=None):
-        """Request class constructor. Initializes several properties and sets various methods
+        """Request class constructor.
+        Initializes several properties and sets various methods
         depending on the environtment.
 
         Keyword Arguments:
@@ -60,7 +62,7 @@ class Request(Extendable):
         self.container = None
 
     def input(self, name, default=False):
-        """Gets a specific input value
+        """Gets a specific input value.
 
         Arguments:
             name {string} -- Key of the input data
@@ -76,7 +78,7 @@ class Request(Extendable):
         return self.request_variables.get(name, default)
 
     def is_post(self):
-        """Checks if the current request is a POST request
+        """Checks if the current request is a POST request.
 
         Returns:
             bool
@@ -167,7 +169,7 @@ class Request(Extendable):
         return only_vars
 
     def load_app(self, app):
-        """Loads the container into the request class
+        """Loads the container into the request class.
 
         Arguments:
             app {masonite.app.App} -- Application Container
@@ -199,7 +201,7 @@ class Request(Extendable):
         return self
 
     def _set_standardized_request_variables(self, variables):
-        """The input data is not perfect so we have to standardize it into a dictionary
+        """The input data is not perfect so we have to standardize it into a dictionary.
 
         Arguments:
             variables {string|dict}
@@ -215,7 +217,7 @@ class Request(Extendable):
             self.request_variables = {}
 
     def _get_standardized_value(self, value):
-        """Get the standardized value based on the type of the value parameter
+        """Get the standardized value based on the type of the value parameter.
 
         Arguments:
             value {list|dict|cgi.FileStorage|string}
@@ -264,7 +266,7 @@ class Request(Extendable):
         return self.container
 
     def has(self, *args):
-        """Check if all given keys in request variable exists
+        """Check if all given keys in request variable exists.
 
         Returns:
             bool
@@ -357,7 +359,8 @@ class Request(Extendable):
         return self._headers
 
     def reset_headers(self):
-        """Resets all headers being set. Typically ran at the end of the request
+        """Resets all headers being set.
+        Typically ran at the end of the request
         because of this object acts like a singleton.
         """
         self._headers = []
@@ -393,7 +396,7 @@ class Request(Extendable):
 
     def cookie(self, key, value, encrypt=True,
                http_only="HttpOnly;", path='/', expires=''):
-        """Sets a cookie in the browser
+        """Sets a cookie in the browser.
 
         Arguments:
             key {string} -- Name of the cookie you want set.
@@ -434,7 +437,7 @@ class Request(Extendable):
         return self.cookies
 
     def get_cookie(self, provided_cookie, decrypt=True):
-        """Retrieves a specific cookie from the browser
+        """Retrieves a specific cookie from the browser.
 
         Arguments:
             provided_cookie {string} -- Name of the cookie to retrieve
@@ -463,7 +466,8 @@ class Request(Extendable):
         return None
 
     def append_cookie(self, key, value):
-        """Whether a new cookie should append on to the string of cookies to be set
+        """Append cookie to the string or create a new string.
+        Whether a new cookie should append on to the string of cookies to be set
         or create a new string. This string is used by the browser to interpret how
         handle setting a cookie.
 
@@ -479,7 +483,7 @@ class Request(Extendable):
                 key, value)
 
     def delete_cookie(self, key):
-        """Delete cookie
+        """Delete cookie.
 
         Arguments:
             key {string} -- Name of cookie to be deleted.
@@ -503,7 +507,7 @@ class Request(Extendable):
         return False
 
     def set_user(self, user_model):
-        """Loads the user into the class
+        """Loads the user into the class.
 
         Arguments:
             user_model {app.User.User} -- Defaults to loading this class unless specifically changed.
@@ -523,7 +527,7 @@ class Request(Extendable):
         return self.user_model
 
     def redirect(self, route, params={}):
-        """Redirect the user based on the route specified
+        """Redirect the user based on the route specified.
 
         Arguments:
             route {string} -- URI of the route (/dashboard/user)
@@ -687,7 +691,7 @@ class Request(Extendable):
         return re.match(compile_route_to_regex(route), self.path)
 
     def compile_route_to_url(self, route, params={}):
-        """Compile the route url into a usable url
+        """Compile the route url into a usable url.
         Converts /url/@id into /url/1. Used for redirection
 
         Arguments:
@@ -729,12 +733,12 @@ class Request(Extendable):
         return compiled_url
 
     def activate_subdomains(self):
-        """Activates subdomains abilities
+        """Activates subdomains abilities.
         """
         self._activate_subdomains = True
 
     def has_subdomain(self):
-        """Checks if the current URI has a subdomain
+        """Checks if the current URI has a subdomain.
 
         Returns:
             bool
@@ -750,7 +754,7 @@ class Request(Extendable):
         return False
 
     def send(self, params):
-        """DEPRECATED :: sets a dictionary to be compiled for a route
+        """DEPRECATED :: sets a dictionary to be compiled for a route.
 
         Arguments:
             params {dict} -- Dictionary of parameters you want to pass to the route.

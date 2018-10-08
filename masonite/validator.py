@@ -9,7 +9,7 @@ class Validator:
     """
 
     def __init__(self, request=None):
-        """Validator constructor
+        """Validator constructor.
 
         Keyword Arguments:
             request {masonite.request.Request} -- Request class. (default: {None})
@@ -20,7 +20,7 @@ class Validator:
         self.error_messages = {}
 
     def validate(self, dictionary):
-        """Sets the validation dictionary
+        """Sets the validation dictionary.
 
         Arguments:
             dictionary {dict} -- Dictionary to validate
@@ -32,7 +32,7 @@ class Validator:
         return self
 
     def check(self, check_manual_dictionary=False):
-        """Validated the dictionary
+        """Validated the dictionary.
 
         Keyword Arguments:
             check_manual_dictionary {bool} -- Check a dictionary manually. (default: {False})
@@ -115,7 +115,7 @@ class Validator:
         return self.check_manual_dictionary
 
     def messages(self, messages):
-        """Specify custom error messages if the validation fails
+        """Specify custom error messages if the validation fails.
 
         Arguments:
             messages {dict} -- Sets a dictionary of error messages.

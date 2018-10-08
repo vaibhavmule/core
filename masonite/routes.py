@@ -1,4 +1,4 @@
-"""Module for the Routing System
+"""Module for the Routing System.
 """
 
 import cgi
@@ -22,7 +22,7 @@ class Route:
     }
 
     def __init__(self, environ=None):
-        """Route constructor
+        """Route constructor.
 
         Keyword Arguments:
             environ {dict} -- WSGI environ (default: {None})
@@ -37,7 +37,7 @@ class Route:
                 self.environ['QUERY_STRING'] = self.set_post_params()
 
     def load_environ(self, environ):
-        """Loads the WSGI environ into the class
+        """Loads the WSGI environ into the class.
 
         Arguments:
             environ {dict} -- WSGI environ
@@ -54,7 +54,7 @@ class Route:
         return self
 
     def get(self, route, output=None):
-        """Returns the output
+        """Returns the output.
 
         Arguments:
             route {masonite.routes.BaseHttpRoute} -- The current route being executed.
@@ -68,7 +68,7 @@ class Route:
         return output
 
     def set_post_params(self):
-        """Returns the correct input
+        """Returns the correct input.
 
         Returns:
             dict -- Dictionary of post parameters.
@@ -117,7 +117,7 @@ class Route:
         return self
 
     def generated_url_list(self):
-        """Returns the URL list
+        """Returns the URL list.
 
         Returns:
             list -- URL list.
@@ -230,7 +230,7 @@ class BaseHttpRoute:
         return self
 
     def module(self, module):
-        """DEPRECATED :: The base module to look for string controllers
+        """DEPRECATED :: The base module to look for string controllers.
 
         Arguments:
             module {string} -- The string representation of a module to look for controllers.
@@ -252,7 +252,7 @@ class BaseHttpRoute:
         return False
 
     def name(self, name):
-        """Specifies the name of the route
+        """Specifies the name of the route.
 
         Arguments:
             name {string} -- Sets a name for the route.
@@ -264,7 +264,7 @@ class BaseHttpRoute:
         return self
 
     def load_request(self, request):
-        """Load the request into this class
+        """Load the request into this class.
 
         Arguments:
             request {masonite.request.Request} -- Request object.
@@ -276,7 +276,7 @@ class BaseHttpRoute:
         return self
 
     def middleware(self, *args):
-        """Loads a list of middleware to run
+        """Loads a list of middleware to run.
 
         Returns:
             self
@@ -288,7 +288,7 @@ class BaseHttpRoute:
         return self
 
     def run_middleware(self, type_of_middleware):
-        """Run route middleware
+        """Run route middleware.
 
         Arguments:
             type_of_middleware {string} -- Type of middleware to be ran (before|after)
@@ -312,7 +312,7 @@ class BaseHttpRoute:
                     "Could not find the '{0}' route middleware".format(arg))
 
     def compile_route_to_regex(self, router):
-        """Compiles the given route to a regex string
+        """Compiles the given route to a regex string.
 
         Arguments:
             route {string} -- URI of the route to compile.
@@ -355,33 +355,33 @@ class BaseHttpRoute:
 
 
 class Get(BaseHttpRoute):
-    """Class for specifying GET requests
+    """Class for specifying GET requests.
     """
 
     def __init__(self):
-        """Get constructor
+        """Get constructor.
         """
         self.method_type = 'GET'
         self.list_middleware = []
 
 
 class Post(BaseHttpRoute):
-    """Class for specifying POST requests
+    """Class for specifying POST requests.
     """
 
     def __init__(self):
-        """Post constructor
+        """Post constructor.
         """
         self.method_type = 'POST'
         self.list_middleware = []
 
 
 class Match(BaseHttpRoute):
-    """Class for specifying POST requests
+    """Class for specifying POST requests.
     """
 
     def __init__(self, method_type=['GET']):
-        """Post constructor
+        """Post constructor.
         """
         if not isinstance(method_type, list):
             raise RouteException("Method type needs to be a list. Got '{}'".format(method_type))
@@ -392,33 +392,33 @@ class Match(BaseHttpRoute):
 
 
 class Put(BaseHttpRoute):
-    """Class for specifying PUT requests
+    """Class for specifying PUT requests.
     """
 
     def __init__(self):
-        """Put constructor
+        """Put constructor.
         """
         self.method_type = 'PUT'
         self.list_middleware = []
 
 
 class Patch(BaseHttpRoute):
-    """Class for specifying Patch requests
+    """Class for specifying Patch requests.
     """
 
     def __init__(self):
-        """Patch constructor
+        """Patch constructor.
         """
         self.method_type = 'PATCH'
         self.list_middleware = []
 
 
 class Delete(BaseHttpRoute):
-    """Class for specifying Delete requests
+    """Class for specifying Delete requests.
     """
 
     def __init__(self):
-        """Delete constructor
+        """Delete constructor.
         """
         self.method_type = 'DELETE'
         self.list_middleware = []
@@ -447,7 +447,7 @@ class ViewRoute(BaseHttpRoute):
 
 
 class RouteGroup():
-    """Class for specifying Route Groups
+    """Class for specifying Route Groups.
     """
 
     def __new__(self, routes=[], middleware=[], domain=[], prefix='', name=''):

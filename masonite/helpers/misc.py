@@ -1,11 +1,11 @@
-"""Module for miscellaneous helper methods"""
+"""Module for miscellaneous helper methods."""
 
 import random
 import string
 
 
 def random_string(length=4):
-    """Generates a random string based on the length given
+    """Generates a random string based on the length given.
 
     Keyword Arguments:
         length {int} -- The amount of the characters to generate (default: {4})

@@ -1,4 +1,4 @@
-"""A LoginController Module"""
+"""A LoginController Module."""
 
 from masonite.auth import Auth
 from masonite.request import Request
@@ -6,7 +6,7 @@ from masonite.view import View
 
 
 class LoginController:
-    """Login Form Controller
+    """Login Form Controller.
     """
 
     def __init__(self):

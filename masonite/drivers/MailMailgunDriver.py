@@ -1,4 +1,4 @@
-"""Mailgun Driver Module"""
+"""Mailgun Driver Module."""
 import requests
 
 from masonite.contracts.MailContract import MailContract
@@ -6,7 +6,7 @@ from masonite.drivers.BaseMailDriver import BaseMailDriver
 
 
 class MailMailgunDriver(BaseMailDriver, MailContract):
-    """Mailgun driver
+    """Mailgun driver.
     """
 
     def send(self, message=None):

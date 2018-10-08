@@ -34,7 +34,7 @@ class BaseUploadDriver(BaseDriver):
                 raise FileTypeException("The extension file not is valid.")
 
     def get_location(self, location=None):
-        """Get the location of where to upload
+        """Get the location of where to upload.
 
         Keyword Arguments:
             location {string} -- The path to upload to. If none then this will check for configuration settings. (default: {None})

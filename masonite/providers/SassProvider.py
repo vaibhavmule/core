@@ -1,4 +1,4 @@
-"""A SassProvider Service Provider"""
+"""A SassProvider Service Provider."""
 
 from masonite.provider import ServiceProvider
 from masonite.storage import Storage
@@ -10,7 +10,7 @@ class SassProvider(ServiceProvider):
 
     def register(self):
 
-        """Compile Sass
+        """Compile Sass.
             Compile Sass if the libsass module is installed. Once installed, all
             Sass files are compiled when the server is ran. This will only run
             once when the server is first started.

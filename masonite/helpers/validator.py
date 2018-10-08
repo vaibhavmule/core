@@ -1,10 +1,10 @@
-"""Validator Helper Module"""
+"""Validator Helper Module."""
 
 from ..validator import Validator
 
 
 def validate(validations, data, messages={}):
-    """Helper function for shorthand validations
+    """Helper function for shorthand validations.
 
     Arguments:
         validations {dict} -- A dictionary of validations from the validator.py library

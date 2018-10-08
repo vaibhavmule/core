@@ -1,4 +1,4 @@
-"""Session Cookie Module"""
+"""Session Cookie Module."""
 
 import json
 
@@ -9,11 +9,11 @@ from masonite.app import App
 
 
 class SessionCookieDriver(SessionContract, BaseDriver):
-    """Cookie Session Driver
+    """Cookie Session Driver.
     """
 
     def __init__(self, request: Request, app: App):
-        """Cookie Session Constructor
+        """Cookie Session Constructor.
 
         Arguments:
             Environ {dict} -- The WSGI environment
@@ -50,7 +50,7 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         self.request.cookie('s_{0}'.format(key), value)
 
     def has(self, key):
-        """Check if a key exists in the session
+        """Check if a key exists in the session.
 
         Arguments:
             key {string} -- The key to check for in the session.
@@ -63,7 +63,7 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         return False
 
     def all(self):
-        """Get all session data
+        """Get all session data.
 
         Returns:
             dict
@@ -88,7 +88,7 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         return False
 
     def __collect_data(self):
-        """Collect data from session and flash data
+        """Collect data from session and flash data.
 
         Returns:
             dict
@@ -116,7 +116,7 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         self.request.cookie('s_{0}'.format(key), value, expires='2 seconds')
 
     def reset(self, flash_only=False):
-        """Deletes all session data
+        """Deletes all session data.
 
         Keyword Arguments:
             flash_only {bool} -- If only flash data should be deleted. (default: {False})
@@ -126,7 +126,7 @@ class SessionCookieDriver(SessionContract, BaseDriver):
             self.request.delete_cookie('s_{0}'.format(cookie))
 
     def helper(self):
-        """Used to create builtin helper function
+        """Used to create builtin helper function.
         """
         return self
 

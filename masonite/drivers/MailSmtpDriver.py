@@ -1,4 +1,4 @@
-"""SMTP Driver Module"""
+"""SMTP Driver Module."""
 
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -9,7 +9,7 @@ from masonite.drivers.BaseMailDriver import BaseMailDriver
 
 
 class MailSmtpDriver(BaseMailDriver, MailContract):
-    """Mail smtp driver
+    """Mail smtp driver.
     """
 
     def send(self, message_contents=None):

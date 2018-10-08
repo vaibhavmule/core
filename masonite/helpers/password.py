@@ -1,4 +1,4 @@
-"""Password Helper Module"""
+"""Password Helper Module."""
 
 import bcrypt
 

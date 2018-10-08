@@ -1,4 +1,4 @@
-"""Upload Disk Driver"""
+"""Upload Disk Driver."""
 
 import os
 
@@ -14,7 +14,7 @@ class UploadDiskDriver(BaseUploadDriver, UploadContract):
     file_location = None
 
     def __init__(self, app: App):
-        """Upload Disk Driver Constructor
+        """Upload Disk Driver Constructor.
 
         Arguments:
             StorageConfig {config.storage} -- Storage configuration.

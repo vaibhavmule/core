@@ -1,4 +1,4 @@
-"""Manager Module"""
+"""Manager Module."""
 
 import inspect
 
@@ -8,14 +8,14 @@ from masonite.exceptions import (DriverNotFound,
 
 
 class Manager:
-    """Base Manager Class
+    """Base Manager Class.
     """
 
     config = None
     driver_prefix = None
 
     def __init__(self, container=None):
-        """Manager constructor
+        """Manager constructor.
 
         Keyword Arguments:
             container {masonite.app.App} -- The container class (default: {None})
@@ -24,7 +24,7 @@ class Manager:
         self.container = container
 
     def load_container(self, container):
-        """Loads the container into the class and creates the default driver
+        """Loads the container into the class and creates the default driver.
 
         Arguments:
             container {masonite.app.App} -- The container class

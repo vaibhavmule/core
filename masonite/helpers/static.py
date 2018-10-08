@@ -1,4 +1,4 @@
-"""Static Helper Module"""
+"""Static Helper Module."""
 
 from config.storage import DRIVERS
 

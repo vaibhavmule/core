@@ -1,4 +1,4 @@
-"""Async Driver Method"""
+"""Async Driver Method."""
 
 import threading
 
@@ -8,11 +8,11 @@ from masonite.app import App
 
 
 class QueueAsyncDriver(QueueContract, BaseDriver):
-    """Queue Aysnc Driver
+    """Queue Aysnc Driver.
     """
 
     def __init__(self, app: App):
-        """Queue Async Driver
+        """Queue Async Driver.
 
         Arguments:
             Container {masonite.app.App} -- The application container.

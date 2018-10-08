@@ -1,4 +1,4 @@
-"""The RegisterController Module"""
+"""The RegisterController Module."""
 
 from config import auth
 from masonite.auth import Auth
@@ -14,7 +14,7 @@ class RegisterController:
     """
 
     def __init__(self):
-        """The RegisterController Constructor
+        """The RegisterController Constructor.
         """
         pass
 

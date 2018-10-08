@@ -1,4 +1,4 @@
-"""View Module"""
+"""View Module."""
 
 
 from jinja2 import ChoiceLoader, Environment, PackageLoader, select_autoescape
@@ -8,7 +8,7 @@ from masonite.exceptions import RequiredContainerBindingNotFound
 
 
 def view(template='index', dictionary={}):
-    """DEPRECATED
+    """DEPRECATED.
     """
     env = Environment(
         loader=PackageLoader('resources', 'templates'),
@@ -144,7 +144,7 @@ class View:
         return self
 
     def cache_for(self, time=None, type=None):
-        """Set time and type for cache
+        """Set time and type for cache.
 
         Keyword Arguments:
             time {string} -- Time to cache template for (default: {None})

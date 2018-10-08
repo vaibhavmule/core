@@ -9,7 +9,7 @@ class Hook:
     """
 
     def __init__(self, app: App):
-        """Hook constructor
+        """Hook constructor.
 
         Arguments:
             app {masonite.app.App} -- Container object.
@@ -17,7 +17,7 @@ class Hook:
         self._app = app
 
     def fire(self, search):
-        """Find all the classes to be fired with the exception hook search string
+        """Find all the classes to be fired with the exception hook search string.
 
         Arguments:
             search {string} -- The search string to collect classes with.

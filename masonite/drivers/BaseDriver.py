@@ -21,7 +21,7 @@ class BaseDriver:
         return self._manager.driver(driver)
 
     def load_manager(self, manager):
-        """Loads the manager into the driver
+        """Loads the manager into the driver.
 
         Arguments:
             manager {masonite.managers} -- Needs to be a Manager class.

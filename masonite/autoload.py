@@ -54,7 +54,7 @@ class Autoload:
                     self.app.bind(obj[1].__name__, self._can_instantiate(obj))
 
     def instances(self, directories, instance, only_app=True, instantiate=False):
-        """Used to autoload all instances of a specific object
+        """Used to autoload all instances of a specific object.
 
         Arguments:
             directories {list} -- List of directories to search.

@@ -1,4 +1,4 @@
-"""Module for the Service Provider"""
+"""Module for the Service Provider."""
 
 from masonite.helpers import random_string
 
@@ -10,7 +10,7 @@ class ServiceProvider:
     wsgi = True
 
     def __init__(self):
-        """Service provider constructor
+        """Service provider constructor.
         """
         self.app = None
 
@@ -37,7 +37,7 @@ class ServiceProvider:
         return self
 
     def routes(self, routes):
-        """Adds routes to the container
+        """Adds routes to the container.
 
         Arguments:
             routes {list} -- List of routes to add to the container
@@ -46,7 +46,7 @@ class ServiceProvider:
         web_routes += routes
 
     def http_middleware(self, middleware):
-        """Adds HTTP middleware to the container
+        """Adds HTTP middleware to the container.
 
         Arguments:
             middleware {list} -- List of middleware to add
@@ -55,7 +55,7 @@ class ServiceProvider:
         http_middleware += middleware
 
     def route_middleware(self, middleware):
-        """Add route middleware to the container
+        """Add route middleware to the container.
 
         Arguments:
             middleware {dict} -- A dictionary of route middleware to add
@@ -64,7 +64,7 @@ class ServiceProvider:
         route_middleware.update(middleware)
 
     def migrations(self, *directories):
-        """Add migration directories to the container
+        """Add migration directories to the container.
         """
         for directory in directories:
             self.app.bind(
@@ -82,7 +82,7 @@ class ServiceProvider:
             )
 
     def assets(self, assets):
-        """Add assets to the container
+        """Add assets to the container.
 
         Arguments:
             assets {dict} -- A dictionary of assets to add

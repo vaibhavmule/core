@@ -1,4 +1,4 @@
-"""The ConfirmController Module"""
+"""The ConfirmController Module."""
 import time
 import datetime
 
@@ -15,7 +15,7 @@ class ConfirmController:
     """
 
     def __init__(self):
-        """The ConfirmController Constructor
+        """The ConfirmController Constructor.
         """
         pass
 
@@ -64,7 +64,7 @@ class ConfirmController:
         return view.render('auth/error', {'app': request.app().make('Application'), 'Auth': Auth(request)})
 
     def get_user(self, id):
-        """Get the user from the database
+        """Get the user from the database.
 
         Arguments:
             id {str} -- The user id

@@ -1,4 +1,5 @@
-"""Module for controlling exceptions handling when an error occurs doing executing
+"""Exception Handler Module.
+A module for controlling exceptions handling when an error occurs doing executing
 code in a Masonite application. These errors could are thrown during runtime.
 """
 

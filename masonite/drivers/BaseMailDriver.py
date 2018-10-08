@@ -40,7 +40,7 @@ class BaseMailDriver(BaseDriver):
         return self
 
     def template(self, template_name, dictionary={}):
-        """Creates an email from a normal Jinja template
+        """Creates an email from a normal Jinja template.
 
         Arguments:
             template_name {string} -- The name of the template.

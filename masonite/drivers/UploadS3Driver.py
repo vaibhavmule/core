@@ -1,4 +1,4 @@
-"""Upload S3 Driver"""
+"""Upload S3 Driver."""
 
 from masonite.contracts import UploadContract
 from masonite.drivers import BaseUploadDriver
@@ -9,11 +9,11 @@ from masonite.app import App
 
 class UploadS3Driver(BaseUploadDriver, UploadContract):
     """
-    Amazon S3 Upload driver
+    Amazon S3 Upload driver.
     """
 
     def __init__(self, upload: UploadManager, app: App):
-        """Upload Disk Driver Constructor
+        """Upload Disk Driver Constructor.
 
         Arguments:
             UploadManager {masonite.managers.UploadManager} -- The Upload Manager object.
