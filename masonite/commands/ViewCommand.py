@@ -16,6 +16,6 @@ class ViewCommand(Command):
             self.error('{0} View Exists!'.format(name))
         else:
             if not os.path.exists(os.path.dirname('resources/templates/{0}.html'.format(name))):
-                os.makedirs(os.path.dirname('resources/templates/{0}.py'.format(name)))
+                os.makedirs(os.path.dirname('resources/templates/{0}.html'.format(name)))
             open('resources/templates/' + name + '.html', 'w+')
             self.info('{0} View Created Successfully!'.format(name))
