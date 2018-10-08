@@ -11,12 +11,10 @@ from app.User import User
 
 
 class ConfirmController:
-    """The ConfirmController class.
-    """
+    """The ConfirmController class."""
 
     def __init__(self):
-        """The ConfirmController Constructor.
-        """
+        """The ConfirmController Constructor."""
         pass
 
     def verify_show(self, request: Request, view: View):

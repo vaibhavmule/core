@@ -9,8 +9,7 @@ from masonite.app import App
 
 
 class SessionCookieDriver(SessionContract, BaseDriver):
-    """Cookie Session Driver.
-    """
+    """Cookie Session Driver."""
 
     def __init__(self, request: Request, app: App):
         """Cookie Session Constructor.
@@ -126,8 +125,7 @@ class SessionCookieDriver(SessionContract, BaseDriver):
             self.request.delete_cookie('s_{0}'.format(cookie))
 
     def helper(self):
-        """Used to create builtin helper function.
-        """
+        """Used to create builtin helper function."""
         return self
 
     def _get_serialization_value(self, value):

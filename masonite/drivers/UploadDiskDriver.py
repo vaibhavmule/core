@@ -8,8 +8,7 @@ from masonite.app import App
 
 
 class UploadDiskDriver(BaseUploadDriver, UploadContract):
-    """Upload to and from the file system.
-    """
+    """Upload to and from the file system."""
 
     file_location = None
 

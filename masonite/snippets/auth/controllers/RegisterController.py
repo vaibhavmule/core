@@ -10,12 +10,10 @@ from masonite.managers import MailManager
 
 
 class RegisterController:
-    """The RegisterController class.
-    """
+    """The RegisterController class."""
 
     def __init__(self):
-        """The RegisterController Constructor.
-        """
+        """The RegisterController Constructor."""
         pass
 
     def show(self, request: Request, view: View):

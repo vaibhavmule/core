@@ -1,5 +1,4 @@
-"""Base mail driver module.
-"""
+"""Base mail driver module."""
 
 from masonite.drivers.BaseDriver import BaseDriver
 from masonite.view import View
@@ -7,8 +6,7 @@ from masonite.app import App
 
 
 class BaseMailDriver(BaseDriver):
-    """Base mail driver class. This class is inherited by all mail drivers.
-    """
+    """Base mail driver class. This class is inherited by all mail drivers."""
 
     def __init__(self, app: App, view: View):
         """Base mail driver constructor.

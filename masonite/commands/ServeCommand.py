@@ -213,8 +213,7 @@ class ReloaderLoop(object):
         pass
 
     def restart_with_reloader(self):
-        """Spawn a new Python interpreter with the same arguments as this one, but running the reloader thread.
-        """
+        """Spawn a new Python interpreter with the same arguments as this one, but running the reloader thread."""
         while 1:
             self._log('Restarting with {}'.format(self.name))
             args = _get_args_for_reloading()

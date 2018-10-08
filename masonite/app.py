@@ -1,5 +1,4 @@
-"""Core of the IOC Container.
-"""
+"""Core of the IOC Container."""
 
 import inspect
 
@@ -15,8 +14,7 @@ class App:
     """
 
     def __init__(self, strict=False, override=True, resolve_parameters=False):
-        """App class constructor.
-        """
+        """App class constructor."""
         self.providers = {}
         self.strict = strict
         self.override = override

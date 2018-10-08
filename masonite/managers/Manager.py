@@ -8,8 +8,7 @@ from masonite.exceptions import (DriverNotFound,
 
 
 class Manager:
-    """Base Manager Class.
-    """
+    """Base Manager Class."""
 
     config = None
     driver_prefix = None

@@ -1,5 +1,4 @@
-"""Module for the ache disk driver.
-"""
+"""Module for the ache disk driver."""
 
 import glob
 import os
@@ -11,8 +10,7 @@ from masonite.app import App
 
 
 class CacheDiskDriver(CacheContract, BaseDriver):
-    """Class for the cache disk driver.
-    """
+    """Class for the cache disk driver."""
 
     def __init__(self, app: App):
         """Cache disk driver constructor.
@@ -104,9 +102,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         return key
 
     def get(self, key):
-        """
-        Get the data from a key in the cache.
-        """
+        """Get the data from a key in the cache."""
         if not self.is_valid(key):
             return None
 
@@ -126,9 +122,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         return content
 
     def delete(self, key):
-        """
-        Delete file cache.
-        """
+        """Delete file cache."""
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:
             glob_path = cache_path + key + '*'
@@ -139,9 +133,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
             os.remove(template)
 
     def update(self, key, value, location=None):
-        """
-            Updates a specific cache by key.
-        """
+        """Updates a specific cache by key."""
         if not location:
             location = self.config.DRIVERS['disk']['location'] + "/"
 
@@ -153,9 +145,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         return key
 
     def exists(self, key):
-        """
-        Check if the cache exists.
-        """
+        """Check if the cache exists."""
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:
             glob_path = cache_path + key + '*'
@@ -168,9 +158,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         return False
 
     def is_valid(self, key):
-        """
-        Check if a valid cache.
-        """
+        """Check if a valid cache."""
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:
             glob_path = cache_path + key + '*'

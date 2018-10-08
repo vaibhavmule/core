@@ -1,5 +1,4 @@
-"""Module for the Routing System.
-"""
+"""Module for the Routing System."""
 
 import cgi
 import importlib
@@ -10,8 +9,7 @@ from masonite.view import View
 
 
 class Route:
-    """Route class used to handle routing.
-    """
+    """Route class used to handle routing."""
 
     route_compilers = {
         'int': r'(\d+)',
@@ -126,8 +124,7 @@ class Route:
 
 
 class BaseHttpRoute:
-    """Base route for HTTP routes.
-    """
+    """Base route for HTTP routes."""
 
     method_type = 'GET'
     output = False
@@ -355,34 +352,28 @@ class BaseHttpRoute:
 
 
 class Get(BaseHttpRoute):
-    """Class for specifying GET requests.
-    """
+    """Class for specifying GET requests."""
 
     def __init__(self):
-        """Get constructor.
-        """
+        """Get constructor."""
         self.method_type = 'GET'
         self.list_middleware = []
 
 
 class Post(BaseHttpRoute):
-    """Class for specifying POST requests.
-    """
+    """Class for specifying POST requests."""
 
     def __init__(self):
-        """Post constructor.
-        """
+        """Post constructor."""
         self.method_type = 'POST'
         self.list_middleware = []
 
 
 class Match(BaseHttpRoute):
-    """Class for specifying POST requests.
-    """
+    """Class for specifying POST requests."""
 
     def __init__(self, method_type=['GET']):
-        """Post constructor.
-        """
+        """Post constructor."""
         if not isinstance(method_type, list):
             raise RouteException("Method type needs to be a list. Got '{}'".format(method_type))
 
@@ -392,34 +383,28 @@ class Match(BaseHttpRoute):
 
 
 class Put(BaseHttpRoute):
-    """Class for specifying PUT requests.
-    """
+    """Class for specifying PUT requests."""
 
     def __init__(self):
-        """Put constructor.
-        """
+        """Put constructor."""
         self.method_type = 'PUT'
         self.list_middleware = []
 
 
 class Patch(BaseHttpRoute):
-    """Class for specifying Patch requests.
-    """
+    """Class for specifying Patch requests."""
 
     def __init__(self):
-        """Patch constructor.
-        """
+        """Patch constructor."""
         self.method_type = 'PATCH'
         self.list_middleware = []
 
 
 class Delete(BaseHttpRoute):
-    """Class for specifying Delete requests.
-    """
+    """Class for specifying Delete requests."""
 
     def __init__(self):
-        """Delete constructor.
-        """
+        """Delete constructor."""
         self.method_type = 'DELETE'
         self.list_middleware = []
 
@@ -447,8 +432,7 @@ class ViewRoute(BaseHttpRoute):
 
 
 class RouteGroup():
-    """Class for specifying Route Groups.
-    """
+    """Class for specifying Route Groups."""
 
     def __new__(self, routes=[], middleware=[], domain=[], prefix='', name=''):
         """Called when this class is first called. This is to give the ability to return a value in the constructor.

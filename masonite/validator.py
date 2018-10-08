@@ -1,12 +1,10 @@
-"""Validation Module.
-"""
+"""Validation Module."""
 
 import validator
 
 
 class Validator:
-    """Validator Class. Responsible for validating form data and dictionaries.
-    """
+    """Validator Class. Responsible for validating form data and dictionaries."""
 
     def __init__(self, request=None):
         """Validator constructor.

@@ -640,8 +640,7 @@ class Request(Extendable):
         return self._get_named_route(name, params)
 
     def reset_redirections(self):
-        """Resets the redirections because of this class acting like a singleton pattern.
-        """
+        """Resets the redirections because of this class acting like a singleton pattern."""
         self.redirect_url = False
         self.redirect_route = False
 
@@ -733,8 +732,7 @@ class Request(Extendable):
         return compiled_url
 
     def activate_subdomains(self):
-        """Activates subdomains abilities.
-        """
+        """Activates subdomains abilities."""
         self._activate_subdomains = True
 
     def has_subdomain(self):
@@ -774,8 +772,7 @@ class Request(Extendable):
         return self
 
     def pop(self, *input_variables):
-        """Deletes keys from the request input.
-        """
+        """Deletes keys from the request input."""
         for key in input_variables:
             if key in self.request_variables:
                 del self.request_variables[key]

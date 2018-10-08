@@ -7,8 +7,7 @@ from masonite.exceptions import InvalidSecretKey
 
 
 class Sign:
-    """Cryptographic signing class.
-    """
+    """Cryptographic signing class."""
 
     def __init__(self, key=None):
         """Sign constructor.

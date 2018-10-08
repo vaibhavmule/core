@@ -9,8 +9,7 @@ from masonite.drivers.BaseMailDriver import BaseMailDriver
 
 
 class MailSmtpDriver(BaseMailDriver, MailContract):
-    """Mail smtp driver.
-    """
+    """Mail smtp driver."""
 
     def send(self, message_contents=None):
         """Sends the message through SMTP.

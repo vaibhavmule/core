@@ -1,5 +1,4 @@
-"""Module for the LoadEnvironment class.
-"""
+"""Module for the LoadEnvironment class."""
 
 import os
 from pathlib import Path
@@ -8,8 +7,7 @@ from dotenv import load_dotenv
 
 
 class LoadEnvironment:
-    """This class is used for loading the environment from .env and .env.* files.
-    """
+    """This class is used for loading the environment from .env and .env.* files."""
 
     def __init__(self, env=None, override=True, only=None):
         """LoadEnvironment constructor.

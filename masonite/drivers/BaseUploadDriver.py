@@ -1,13 +1,11 @@
-"""Base upload driver module.
-"""
+"""Base upload driver module."""
 
 from masonite.exceptions import FileTypeException
 from masonite.drivers.BaseDriver import BaseDriver
 
 
 class BaseUploadDriver(BaseDriver):
-    """Base class that all upload drivers inherit from.
-    """
+    """Base class that all upload drivers inherit from."""
 
     accept_file_types = None
 

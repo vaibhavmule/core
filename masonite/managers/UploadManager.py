@@ -16,6 +16,5 @@ class UploadManager(Manager, UploadManagerContract):
 
 
 class Upload:
-    """Dummy class that will be used to swap out the manager in the container.
-    """
+    """Dummy class that will be used to swap out the manager in the container."""
     pass

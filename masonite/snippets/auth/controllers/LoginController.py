@@ -6,12 +6,10 @@ from masonite.view import View
 
 
 class LoginController:
-    """Login Form Controller.
-    """
+    """Login Form Controller."""
 
     def __init__(self):
-        """LoginController Constructor.
-        """
+        """LoginController Constructor."""
         pass
 
     def show(self, request: Request, view: View):

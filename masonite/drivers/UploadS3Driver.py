@@ -8,9 +8,7 @@ from masonite.app import App
 
 
 class UploadS3Driver(BaseUploadDriver, UploadContract):
-    """
-    Amazon S3 Upload driver.
-    """
+    """Amazon S3 Upload driver."""
 
     def __init__(self, upload: UploadManager, app: App):
         """Upload Disk Driver Constructor.

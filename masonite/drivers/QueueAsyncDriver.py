@@ -8,8 +8,7 @@ from masonite.app import App
 
 
 class QueueAsyncDriver(QueueContract, BaseDriver):
-    """Queue Aysnc Driver.
-    """
+    """Queue Aysnc Driver."""
 
     def __init__(self, app: App):
         """Queue Async Driver.

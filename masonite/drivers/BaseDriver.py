@@ -1,10 +1,8 @@
-"""The base class that all drivers inherit from.
-"""
+"""The base class that all drivers inherit from."""
 
 
 class BaseDriver:
-    """Base driver class.
-    """
+    """Base driver class."""
 
     _manager = None
 

@@ -8,8 +8,7 @@ from masonite.exceptions import RequiredContainerBindingNotFound
 
 
 def view(template='index', dictionary={}):
-    """DEPRECATED.
-    """
+    """DEPRECATED."""
     env = Environment(
         loader=PackageLoader('resources', 'templates'),
         autoescape=select_autoescape(['html', 'xml'])
@@ -19,8 +18,7 @@ def view(template='index', dictionary={}):
 
 
 class View:
-    """View class. Responsible for handling everything involved with views and view environments.
-    """
+    """View class. Responsible for handling everything involved with views and view environments."""
 
     _splice = '/'
 
@@ -83,8 +81,7 @@ class View:
             self.dictionary)
 
     def _update_from_composers(self):
-        """Adds data into the view from specified composers.
-        """
+        """Adds data into the view from specified composers."""
         # Check if the template is directly specified in the composer
         if self.template in self.composers:
             self.dictionary.update(self.composers[self.template])
@@ -127,8 +124,7 @@ class View:
         return self
 
     def extend(self):
-        """Extend class.
-        """
+        """Extend class."""
         pass
 
     def share(self, dictionary):

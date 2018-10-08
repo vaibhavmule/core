@@ -1,5 +1,4 @@
-"""Module for the Pusher websocket driver.
-"""
+"""Module for the Pusher websocket driver."""
 
 from masonite.contracts import BroadcastContract
 from masonite.drivers import BaseDriver
@@ -8,8 +7,7 @@ from masonite.app import App
 
 
 class BroadcastPusherDriver(BroadcastContract, BaseDriver):
-    """Class for the Pusher websocket driver.
-    """
+    """Class for the Pusher websocket driver."""
 
     def __init__(self, app: App):
         """Pusher driver constructor.

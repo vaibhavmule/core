@@ -6,8 +6,7 @@ import bcrypt
 
 
 class Auth:
-    """This class will be used to authenticate users based on the config/auth.py file.
-    """
+    """This class will be used to authenticate users based on the config/auth.py file."""
 
     _once = False
 

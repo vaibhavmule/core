@@ -1,5 +1,4 @@
-"""Module for using the Ably websocket driver.
-"""
+"""Module for using the Ably websocket driver."""
 
 from masonite.contracts.BroadcastContract import BroadcastContract
 from masonite.drivers.BaseDriver import BaseDriver
@@ -8,8 +7,7 @@ from masonite.app import App
 
 
 class BroadcastAblyDriver(BroadcastContract, BaseDriver):
-    """Class for the Ably Driver.
-    """
+    """Class for the Ably Driver."""
 
     def __init__(self, app: App):
         """Ably driver constructor.

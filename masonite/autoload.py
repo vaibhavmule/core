@@ -11,8 +11,7 @@ from masonite.exceptions import (AutoloadContainerOverwrite, ContainerError,
 
 
 class Autoload:
-    """Autoload class. Used to retrieve all classes from any set of directories.
-    """
+    """Autoload class. Used to retrieve all classes from any set of directories."""
 
     classes = {}
 

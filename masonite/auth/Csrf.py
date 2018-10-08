@@ -4,8 +4,7 @@ import os
 
 
 class Csrf:
-    """CSRF Protection Class.
-    """
+    """CSRF Protection Class."""
 
     def __init__(self, request):
         """CSRF constructor.

@@ -2,12 +2,10 @@
 
 
 class Queueable:
-    """Makes classes Queueable.
-    """
+    """Makes classes Queueable."""
 
     def handle(self):
-        """Put the queue logic in this handle method.
-        """
+        """Put the queue logic in this handle method."""
         pass
 
     def dispatch(self):

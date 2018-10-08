@@ -12,8 +12,7 @@ package_directory = os.path.dirname(os.path.realpath(__file__))
 
 
 class ExceptionHandler:
-    """Class for handling exceptions thrown during runtime.
-    """
+    """Class for handling exceptions thrown during runtime."""
 
     def __init__(self, app):
         """ExceptionHandler constructor. Also responsible for loading static files into the container.
@@ -26,8 +25,7 @@ class ExceptionHandler:
         self._register_static_files()
 
     def _register_static_files(self):
-        """Register static files into the container.
-        """
+        """Register static files into the container."""
         self._app.make('Storage').STATICFILES.update(
             {
                 os.path.join(package_directory, 'snippets/exceptions'):
