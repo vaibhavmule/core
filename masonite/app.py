@@ -9,8 +9,8 @@ from masonite.exceptions import (ContainerError,
 
 class App:
     """Core of the Service Container.
-    Performs bindings and resolving
-    of objects to and from the container.
+
+    Performs bindings and resolving of objects to and from the container.
     """
 
     def __init__(self, strict=False, override=True, resolve_parameters=False):
@@ -49,6 +49,7 @@ class App:
 
     def simple(self, obj):
         """Easy way to bind classes into the container by using passing the object only.
+        
         Automatically generates the key for the binding process.
 
         Arguments:
@@ -106,6 +107,7 @@ class App:
 
     def helper(self):
         """Adds a helper to create builtin functions.
+    
         Used to more simply return
         instances of this class when building helpers.
 

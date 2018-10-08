@@ -49,6 +49,7 @@ class Manager:
 
     def create_driver(self, driver=None):
         """Creates the driver to be used.
+    
         This could be used as the default driver when the manager is created or called internally on the fly
         to change to a specific driver
 

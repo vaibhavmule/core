@@ -96,6 +96,7 @@ iteritems = lambda d, *args, **kwargs: iter(d.items(*args, **kwargs))
 
 def _iter_module_files():
     """This iterates over all relevant Python files.
+
     It goes through all
     loaded files from modules, all files in folders of already loaded modules
     as well as all files reachable through a package.
@@ -149,6 +150,7 @@ def _find_observable_paths(extra_files=None):
 
 def _get_args_for_reloading():
     """Returns the executable.
+
     This contains a workaround for windows
     if the executable is incorrectly reported to not have the .exe
     extension which can cause bugs on reloading.

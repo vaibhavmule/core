@@ -1,4 +1,6 @@
-"""Autoloader Module. This contains the class for autoloading classes from directories.
+"""Autoloader Module.
+
+This contains the class for autoloading classes from directories.
 This class is simply used to point at a directory and retrieve all classes in that directory.
 """
 

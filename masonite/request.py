@@ -28,6 +28,7 @@ from masonite.helpers.time import cookie_expire_time
 
 class Request(Extendable):
     """Handles many different aspects of a single request.
+
     This is the object passed through to the controllers
     as a request parameter
 
@@ -39,6 +40,7 @@ class Request(Extendable):
 
     def __init__(self, environ=None):
         """Request class constructor.
+
         Initializes several properties and sets various methods
         depending on the environtment.
 
@@ -360,6 +362,7 @@ class Request(Extendable):
 
     def reset_headers(self):
         """Resets all headers being set.
+
         Typically ran at the end of the request
         because of this object acts like a singleton.
         """
@@ -367,6 +370,7 @@ class Request(Extendable):
 
     def set_params(self, params):
         """Loads the params into the class.
+
         These parameters are where the developer can retrieve the
         /url/@variable:string/ from the url.
 
@@ -381,6 +385,7 @@ class Request(Extendable):
 
     def param(self, parameter):
         """Retrieves the param from the URL.
+
         The "parameter" parameter in this method should be the name of the
         @variable passed into the url in web.py.
 
@@ -467,6 +472,7 @@ class Request(Extendable):
 
     def append_cookie(self, key, value):
         """Append cookie to the string or create a new string.
+
         Whether a new cookie should append on to the string of cookies to be set
         or create a new string. This string is used by the browser to interpret how
         handle setting a cookie.
@@ -584,6 +590,7 @@ class Request(Extendable):
 
     def _get_route_from_controller(self, controller):
         """Get the route using the controller.
+
         This finds the route with the attached controller and returns that route.
         This does not compile the URI but actually returns the Route object.
 
@@ -691,6 +698,7 @@ class Request(Extendable):
 
     def compile_route_to_url(self, route, params={}):
         """Compile the route url into a usable url.
+    
         Converts /url/@id into /url/1. Used for redirection
 
         Arguments:
