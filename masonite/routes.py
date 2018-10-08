@@ -309,7 +309,7 @@ class BaseHttpRoute:
                     "Could not find the '{0}' route middleware".format(arg))
 
     def compile_route_to_regex(self, router):
-        """Compiles the given route to a regex string.
+        """Compile the given route to a regex string.
 
         Arguments:
             route {string} -- URI of the route to compile.

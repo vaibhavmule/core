@@ -4,7 +4,7 @@ import bcrypt
 
 
 def password(password):
-    """Bcrypts a string.
+    """Bcrypt a string.
 
     Useful for storing passwords in a database.
 

@@ -53,7 +53,7 @@ class Sign:
         return self.encryption.decode('utf-8')
 
     def unsign(self, value=None):
-        """Unsigns the value using the secret key.
+        """Unsign the value using the secret key.
 
         Keyword Arguments:
             value {string} -- The value to be unencrypted. (default: {None})

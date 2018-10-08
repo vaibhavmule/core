@@ -128,7 +128,7 @@ class View:
         pass
 
     def share(self, dictionary):
-        """Shares data to all templates.
+        """Share data to all templates.
 
         Arguments:
             dictionary {dict} -- Dictionary of key value pairs to add to all views.

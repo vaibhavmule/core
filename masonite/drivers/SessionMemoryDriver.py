@@ -85,7 +85,7 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         self._flash[ip][key] = value
 
     def reset(self, flash_only=False):
-        """Deletes all session data
+        """Delete all session data
 
         Keyword Arguments:
             flash_only {bool} -- If only flash data should be deleted. (default: {False})

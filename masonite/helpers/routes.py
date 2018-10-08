@@ -4,7 +4,7 @@ import re
 
 
 def flatten_routes(routes):
-    """Flattens the grouped routes into a single list of routes.
+    """Flatten the grouped routes into a single list of routes.
 
     Arguments:
         routes {list} -- This can be a multi dementional list which can flatten all lists into a single list.
@@ -132,7 +132,7 @@ def group(url, route_list):
 
 
 def compile_route_to_regex(route):
-    """Compiles a route to regex.
+    """Compile a route to regex.
 
     Arguments:
         route {masonite.routes.Route} -- The Masonite route object

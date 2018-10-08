@@ -740,7 +740,7 @@ class Request(Extendable):
         return compiled_url
 
     def activate_subdomains(self):
-        """Activates subdomains abilities."""
+        """Activate subdomains abilities."""
         self._activate_subdomains = True
 
     def has_subdomain(self):
