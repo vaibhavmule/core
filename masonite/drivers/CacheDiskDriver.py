@@ -24,7 +24,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         self.cache_forever = None
 
     def store(self, key, value, extension=".txt", location=None):
-        """Stores content in cache file.
+        """Store content in cache file.
 
         Arguments:
             key {string} -- The key to store the cache file into
@@ -133,7 +133,7 @@ class CacheDiskDriver(CacheContract, BaseDriver):
             os.remove(template)
 
     def update(self, key, value, location=None):
-        """Updates a specific cache by key."""
+        """Update a specific cache by key."""
         if not location:
             location = self.config.DRIVERS['disk']['location'] + "/"
 

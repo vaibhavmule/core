@@ -62,7 +62,7 @@ class App:
         return self
 
     def make(self, name):
-        """Retrieves a class from the container by key.
+        """Retrieve a class from the container by key.
 
         Arguments:
             name {string} -- Key in the container that you want to get.
@@ -106,7 +106,7 @@ class App:
         return False
 
     def helper(self):
-        """Adds a helper to create builtin functions.
+        """Add a helper to create builtin functions.
     
         Used to more simply return
         instances of this class when building helpers.
@@ -117,7 +117,7 @@ class App:
         return self
 
     def resolve(self, obj):
-        """Takes an object such as a function or class method and resolves it's parameters from objects in the container.
+        """Take an object such as a function or class method and resolves it's parameters from objects in the container.
 
         Arguments:
             obj {object} -- The object you want to resolve objects from via this container.
@@ -274,7 +274,7 @@ class App:
         return self
 
     def fire_hook(self, action, key, obj):
-        """Fires a specific hook based on a key or object.
+        """Fire a specific hook based on a key or object.
 
         Arguments:
             action {string} -- Should be the action to fire (bind|make|resolve)

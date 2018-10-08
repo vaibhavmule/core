@@ -95,7 +95,7 @@ iteritems = lambda d, *args, **kwargs: iter(d.items(*args, **kwargs))
 
 
 def _iter_module_files():
-    """This iterates over all relevant Python files.
+    """Iterate over all relevant Python files.
 
     It goes through all
     loaded files from modules, all files in folders of already loaded modules
@@ -128,7 +128,7 @@ def _iter_module_files():
 
 
 def _find_observable_paths(extra_files=None):
-    """Finds all paths that should be observed."""
+    """Find all paths that should be observed."""
     rv = set(os.path.dirname(os.path.abspath(x))
              if os.path.isfile(x) else os.path.abspath(x)
              for x in sys.path)
@@ -149,7 +149,7 @@ def _find_observable_paths(extra_files=None):
 
 
 def _get_args_for_reloading():
-    """Returns the executable.
+    """Return the executable.
 
     This contains a workaround for windows
     if the executable is incorrectly reported to not have the .exe

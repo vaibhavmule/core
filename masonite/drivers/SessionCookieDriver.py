@@ -115,7 +115,7 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         self.request.cookie('s_{0}'.format(key), value, expires='2 seconds')
 
     def reset(self, flash_only=False):
-        """Deletes all session data.
+        """Delete all session data.
 
         Keyword Arguments:
             flash_only {bool} -- If only flash data should be deleted. (default: {False})
@@ -125,7 +125,7 @@ class SessionCookieDriver(SessionContract, BaseDriver):
             self.request.delete_cookie('s_{0}'.format(cookie))
 
     def helper(self):
-        """Used to create builtin helper function."""
+        """Use to create builtin helper function."""
         return self
 
     def _get_serialization_value(self, value):

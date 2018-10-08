@@ -28,7 +28,7 @@ class Auth:
             self.auth_model = auth.AUTH['model']
 
     def user(self):
-        """Gets the currently logged in user.
+        """Get the currently logged in user.
 
         Raises:
             exception -- Raised when there has been an error handling the user model.
@@ -109,7 +109,7 @@ class Auth:
         return False
 
     def once(self):
-        """Logs in the user without saving a cookie.
+        """Log in the user without saving a cookie.
 
         Returns:
             self

@@ -12,7 +12,7 @@ class MailSmtpDriver(BaseMailDriver, MailContract):
     """Mail smtp driver."""
 
     def send(self, message_contents=None):
-        """Sends the message through SMTP.
+        """Send the message through SMTP.
 
         Keyword Arguments:
             message {string} -- The message to be sent to SMTP. (default: {None})

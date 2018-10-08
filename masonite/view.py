@@ -81,7 +81,7 @@ class View:
             self.dictionary)
 
     def _update_from_composers(self):
-        """Adds data into the view from specified composers."""
+        """Add data into the view from specified composers."""
         # Check if the template is directly specified in the composer
         if self.template in self.composers:
             self.dictionary.update(self.composers[self.template])
@@ -105,7 +105,7 @@ class View:
                 compiled_string += '/'
 
     def composer(self, composer_name, dictionary):
-        """Updates composer dictionary.
+        """Update composer dictionary.
 
         Arguments:
             composer_name {string} -- Key to bind dictionary of data to.
@@ -201,7 +201,7 @@ class View:
                 loader(template_location))
 
     def filter(self, name, function):
-        """Used to add filters to views.
+        """Use to add filters to views.
 
         Arguments:
             name {string} -- Key to bind the filter to.

@@ -5,7 +5,7 @@ import string
 
 
 def random_string(length=4):
-    """Generates a random string based on the length given.
+    """Generate a random string based on the length given.
 
     Keyword Arguments:
         length {int} -- The amount of the characters to generate (default: {4})

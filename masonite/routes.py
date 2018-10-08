@@ -35,7 +35,7 @@ class Route:
                 self.environ['QUERY_STRING'] = self.set_post_params()
 
     def load_environ(self, environ):
-        """Loads the WSGI environ into the class.
+        """Load the WSGI environ into the class.
 
         Arguments:
             environ {dict} -- WSGI environ
@@ -52,7 +52,7 @@ class Route:
         return self
 
     def get(self, route, output=None):
-        """Returns the output.
+        """Return the output.
 
         Arguments:
             route {masonite.routes.BaseHttpRoute} -- The current route being executed.
@@ -66,7 +66,7 @@ class Route:
         return output
 
     def set_post_params(self):
-        """Returns the correct input.
+        """Return the correct input.
 
         Returns:
             dict -- Dictionary of post parameters.
@@ -100,7 +100,7 @@ class Route:
         return False
 
     def is_not_get_request(self):
-        """Checks if current request is not a get request.
+        """Check if current request is not a get request.
 
         Returns:
             bool
@@ -115,7 +115,7 @@ class Route:
         return self
 
     def generated_url_list(self):
-        """Returns the URL list.
+        """Return the URL list.
 
         Returns:
             list -- URL list.
@@ -136,7 +136,7 @@ class BaseHttpRoute:
     list_middleware = None
 
     def route(self, route, output):
-        """Loads the route into the class. This also looks for the controller and attaches it to the route.
+        """Load the route into the class. This also looks for the controller and attaches it to the route.
 
         Arguments:
             route {string} -- This is a URI to attach to the route (/dashboard/user).
@@ -154,7 +154,7 @@ class BaseHttpRoute:
         return view_route
 
     def _find_controller(self, controller):
-        """Finds the controller to attach to the route.
+        """Find the controller to attach to the route.
 
         Arguments:
             controller {string|object} -- String or object controller to search for.
@@ -215,7 +215,7 @@ class BaseHttpRoute:
         return response
 
     def domain(self, domain):
-        """Sets the subdomain for the route.
+        """Set the subdomain for the route.
 
         Arguments:
             domain {string|list|tuple} -- The string or list of subdomains to attach to this route.
@@ -249,7 +249,7 @@ class BaseHttpRoute:
         return False
 
     def name(self, name):
-        """Specifies the name of the route.
+        """Specify the name of the route.
 
         Arguments:
             name {string} -- Sets a name for the route.
@@ -273,7 +273,7 @@ class BaseHttpRoute:
         return self
 
     def middleware(self, *args):
-        """Loads a list of middleware to run.
+        """Load a list of middleware to run.
 
         Returns:
             self
@@ -437,7 +437,7 @@ class RouteGroup():
     """Class for specifying Route Groups."""
 
     def __new__(self, routes=[], middleware=[], domain=[], prefix='', name=''):
-        """Called when this class is first called. This is to give the ability to return a value in the constructor.
+        """Call when this class is first called. This is to give the ability to return a value in the constructor.
 
         Keyword Arguments:
             routes {list} -- List of routes. (default: {[]})

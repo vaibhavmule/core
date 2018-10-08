@@ -13,11 +13,11 @@ class ServiceProvider:
         self.app = None
 
     def boot(self):
-        """Used to boot things into the container. Typically ran after the register method has been ran."""
+        """Use to boot things into the container. Typically ran after the register method has been ran."""
         pass
 
     def register(self):
-        """Used to register objects into the container."""
+        """Use to register objects into the container."""
         pass
 
     def load_app(self, app):
@@ -33,7 +33,7 @@ class ServiceProvider:
         return self
 
     def routes(self, routes):
-        """Adds routes to the container.
+        """Add routes to the container.
 
         Arguments:
             routes {list} -- List of routes to add to the container
@@ -42,7 +42,7 @@ class ServiceProvider:
         web_routes += routes
 
     def http_middleware(self, middleware):
-        """Adds HTTP middleware to the container.
+        """Add HTTP middleware to the container.
 
         Arguments:
             middleware {list} -- List of middleware to add
@@ -68,7 +68,7 @@ class ServiceProvider:
             )
 
     def commands(self, *commands):
-        """Adds commands to the container. Pass in the commands as arguments."""
+        """Add commands to the container. Pass in the commands as arguments."""
         for command in commands:
             self.app.bind(
                 '{}Command'.format(command.__class__.__name__.replace('Command', '')),

@@ -39,7 +39,7 @@ class LoginController:
         return request.redirect('/login')
 
     def logout(self, request: Request):
-        """Logs out the user.
+        """Log out the user.
 
         Arguments:
             request {masonite.request.Request} -- The Masonite request class.

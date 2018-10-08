@@ -64,7 +64,7 @@ class Request(Extendable):
         self.container = None
 
     def input(self, name, default=False):
-        """Gets a specific input value.
+        """Get a specific input value.
 
         Arguments:
             name {string} -- Key of the input data
@@ -80,7 +80,7 @@ class Request(Extendable):
         return self.request_variables.get(name, default)
 
     def is_post(self):
-        """Checks if the current request is a POST request.
+        """Check if the current request is a POST request.
 
         Returns:
             bool
@@ -91,7 +91,7 @@ class Request(Extendable):
         return False
 
     def is_not_get_request(self):
-        """Checks if the current request is not a get request.
+        """Check if the current request is not a get request.
 
         Returns:
             bool
@@ -114,7 +114,7 @@ class Request(Extendable):
         return False
 
     def key(self, key):
-        """Sets the encryption key.
+        """Set the encryption key.
 
         Arguments:
             key {string} -- Encryption key
@@ -126,7 +126,7 @@ class Request(Extendable):
         return self
 
     def all(self, internal_variables=True):
-        """Gets all the input data.
+        """Get all the input data.
 
         Keyword Arguments:
             internal_variables {bool} -- Get the internal framework variables as well (default: {True})
@@ -144,7 +144,7 @@ class Request(Extendable):
         return self.request_variables
 
     def only(self, *names):
-        """Returns the specified request variables in a dictionary.
+        """Return the specified request variables in a dictionary.
 
         Returns:
             dict
@@ -157,7 +157,7 @@ class Request(Extendable):
         return only_vars
 
     def without(self, *names):
-        """Returns the request variables in a dictionary without specified values.
+        """Return the request variables in a dictionary without specified values.
 
         Returns:
             dict
@@ -171,7 +171,7 @@ class Request(Extendable):
         return only_vars
 
     def load_app(self, app):
-        """Loads the container into the request class.
+        """Load the container into the request class.
 
         Arguments:
             app {masonite.app.App} -- Application Container
@@ -183,7 +183,7 @@ class Request(Extendable):
         return self
 
     def load_environ(self, environ):
-        """Loads the wsgi environment and sets various properties.
+        """Load the wsgi environment and sets various properties.
 
         Arguments:
             environ {dict} -- WSGI environ
@@ -260,7 +260,7 @@ class Request(Extendable):
         return False
 
     def app(self):
-        """Returns the application container.
+        """Return the application container.
 
         Returns:
             masonite.app.App -- Application container
@@ -276,7 +276,7 @@ class Request(Extendable):
         return all((arg in self.request_variables) for arg in args)
 
     def status(self, status):
-        """Sets the HTTP status code.
+        """Set the HTTP status code.
 
         Arguments:
             status {string|integer} -- A string or integer with the standardized status code
@@ -295,7 +295,7 @@ class Request(Extendable):
         return self
 
     def get_status_code(self):
-        """Returns the current request status code.
+        """Return the current request status code.
 
         Returns:
             string -- Returns the status code (404 Not Found, 200 OK, etc)
@@ -303,7 +303,7 @@ class Request(Extendable):
         return self.app().make('StatusCode')
 
     def get_request_method(self):
-        """Gets the current request method.
+        """Get the current request method.
 
         Returns:
             string -- returns GET, POST, PUT, etc
@@ -311,7 +311,7 @@ class Request(Extendable):
         return self.environ['REQUEST_METHOD']
 
     def header(self, key, value=None, http_prefix=None):
-        """Sets or gets a header depending on if "value" is passed in or not.
+        """Set or gets a header depending on if "value" is passed in or not.
 
         Arguments:
             key {string|dict} -- The header you want to set or get. If the key is a dictionary, loop through each key pair
@@ -353,7 +353,7 @@ class Request(Extendable):
             self._headers.append((key, str(value)))
 
     def get_headers(self):
-        """Returns all current headers to be set.
+        """Return all current headers to be set.
 
         Returns:
             dict -- Dictionary of all headers.
@@ -361,7 +361,7 @@ class Request(Extendable):
         return self._headers
 
     def reset_headers(self):
-        """Resets all headers being set.
+        """Reset all headers being set.
 
         Typically ran at the end of the request
         because of this object acts like a singleton.
@@ -369,7 +369,7 @@ class Request(Extendable):
         self._headers = []
 
     def set_params(self, params):
-        """Loads the params into the class.
+        """Load the params into the class.
 
         These parameters are where the developer can retrieve the
         /url/@variable:string/ from the url.
@@ -384,7 +384,7 @@ class Request(Extendable):
         return self
 
     def param(self, parameter):
-        """Retrieves the param from the URL.
+        """Retrieve the param from the URL.
 
         The "parameter" parameter in this method should be the name of the
         @variable passed into the url in web.py.
@@ -401,7 +401,7 @@ class Request(Extendable):
 
     def cookie(self, key, value, encrypt=True,
                http_only="HttpOnly;", path='/', expires=''):
-        """Sets a cookie in the browser.
+        """Set a cookie in the browser.
 
         Arguments:
             key {string} -- Name of the cookie you want set.
@@ -442,7 +442,7 @@ class Request(Extendable):
         return self.cookies
 
     def get_cookie(self, provided_cookie, decrypt=True):
-        """Retrieves a specific cookie from the browser.
+        """Retrieve a specific cookie from the browser.
 
         Arguments:
             provided_cookie {string} -- Name of the cookie to retrieve
@@ -513,7 +513,7 @@ class Request(Extendable):
         return False
 
     def set_user(self, user_model):
-        """Loads the user into the class.
+        """Load the user into the class.
 
         Arguments:
             user_model {app.User.User} -- Defaults to loading this class unless specifically changed.
@@ -525,7 +525,7 @@ class Request(Extendable):
         return self
 
     def user(self):
-        """Loads the user into the class.
+        """Load the user into the class.
 
         Returns:
             app.User.User|None -- Returns None if the user is not loaded or logged in.
@@ -570,7 +570,7 @@ class Request(Extendable):
         return self
 
     def _get_named_route(self, name, params):
-        """Searches the list of routes and returns the route with the name passed.
+        """Search the list of routes and returns the route with the name passed.
 
         Arguments:
             name {string} -- Route name to search for (dashboard.user).
@@ -615,7 +615,7 @@ class Request(Extendable):
                 return route
 
     def url_from_controller(self, controller, params={}):
-        """Returns the compiled URI using a controller.
+        """Return the compiled URI using a controller.
 
         Arguments:
             controller {string|object} -- Can be a string controller or a controller object.
@@ -629,7 +629,7 @@ class Request(Extendable):
         return self.compile_route_to_url(self._get_route_from_controller(controller).route_url, params)
 
     def route(self, name, params={}, full=False):
-        """Gets a route URI by its name.
+        """Get a route URI by its name.
 
         Arguments:
             name {string} -- Name of the route.
@@ -647,12 +647,12 @@ class Request(Extendable):
         return self._get_named_route(name, params)
 
     def reset_redirections(self):
-        """Resets the redirections because of this class acting like a singleton pattern."""
+        """Reset the redirections because of this class acting like a singleton pattern."""
         self.redirect_url = False
         self.redirect_route = False
 
     def back(self, default=None):
-        """Returns a URI for redirection depending on several use cases.
+        """Return a URI for redirection depending on several use cases.
 
         Keyword Arguments:
             default {string} -- Default value if nothing can be found. (default: {None})
@@ -669,7 +669,7 @@ class Request(Extendable):
         return self.redirect(redirect_url)
 
     def is_named_route(self, name, params={}):
-        """Checks if the current URI is a specific named route.
+        """Check if the current URI is a specific named route.
 
         Arguments:
             name {string} -- The name of a route.
@@ -744,7 +744,7 @@ class Request(Extendable):
         self._activate_subdomains = True
 
     def has_subdomain(self):
-        """Checks if the current URI has a subdomain.
+        """Check if the current URI has a subdomain.
 
         Returns:
             bool
@@ -780,7 +780,7 @@ class Request(Extendable):
         return self
 
     def pop(self, *input_variables):
-        """Deletes keys from the request input."""
+        """Delete keys from the request input."""
         for key in input_variables:
             if key in self.request_variables:
                 del self.request_variables[key]

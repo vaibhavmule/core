@@ -18,7 +18,7 @@ class Validator:
         self.error_messages = {}
 
     def validate(self, dictionary):
-        """Sets the validation dictionary.
+        """Set the validation dictionary.
 
         Arguments:
             dictionary {dict} -- Dictionary to validate
@@ -30,7 +30,7 @@ class Validator:
         return self
 
     def check(self, check_manual_dictionary=False):
-        """Validated the dictionary.
+        """Validate the dictionary.
 
         Keyword Arguments:
             check_manual_dictionary {bool} -- Check a dictionary manually. (default: {False})
@@ -43,7 +43,7 @@ class Validator:
         return self.run_validation()[0]
 
     def errors(self):
-        """Returns a dictionary of errors.
+        """Return a dictionary of errors.
 
         Returns:
             None|dict
@@ -59,7 +59,7 @@ class Validator:
         return validation[1]
 
     def run_validation(self):
-        """Loads the dictionary and runs the validations.
+        """Load the dictionary and runs the validations.
 
         Returns:
             bool|dict
@@ -73,7 +73,7 @@ class Validator:
         return validator.validate(self.validation_dictionary, validation_dict)
 
     def get(self, validation):
-        """Gets a key in the validation input and runs it through a cast method if one exists.
+        """Get a key in the validation input and runs it through a cast method if one exists.
 
         Arguments:
             validation {string} -- Key inside the validation input

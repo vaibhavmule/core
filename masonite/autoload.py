@@ -55,7 +55,7 @@ class Autoload:
                     self.app.bind(obj[1].__name__, self._can_instantiate(obj))
 
     def instances(self, directories, instance, only_app=True, instantiate=False):
-        """Used to autoload all instances of a specific object.
+        """Use to autoload all instances of a specific object.
 
         Arguments:
             directories {list} -- List of directories to search.
@@ -129,7 +129,7 @@ class Autoload:
         return obj[1]
 
     def _get_module_members(self, module_loader, name):
-        """Gets the module members.
+        """Get the module members.
 
         Arguments:
             module_loader {pkgutil.ModuleLoader} -- Module Loader from the pkgutil library

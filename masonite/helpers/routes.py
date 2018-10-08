@@ -174,7 +174,7 @@ def compile_route_to_regex(route):
 
 
 def create_matchurl(router, route):
-    """Creates a regex string for router.url to be matched against.
+    """Create a regex string for router.url to be matched against.
 
     Arguments:
         router {masonite.routes.Route} -- The Masonite route object

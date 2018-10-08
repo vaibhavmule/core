@@ -4,7 +4,7 @@ from config.storage import DRIVERS
 
 
 def static(alias, file_name):
-    """Gets the static file location of an asset.
+    """Get the static file location of an asset.
 
     Arguments:
         alias {string} -- The driver and location to search for. This could be s3.uploads

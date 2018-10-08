@@ -19,7 +19,7 @@ class BaseUploadDriver(BaseDriver):
         return self
 
     def validate_extension(self, filename):
-        """Checks for valid file extenstions set with the 'accept' method.
+        """Check for valid file extenstions set with the 'accept' method.
 
         Arguments:
             filename {string} -- The filename with file extension to validate.

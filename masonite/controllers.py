@@ -9,7 +9,7 @@ class Controller:
         self.app = None
 
     def load_app(self, app):
-        """Loads the container into the controller.
+        """Load the container into the controller.
 
         Arguments:
             app {masonite.app.App} -- The container object.

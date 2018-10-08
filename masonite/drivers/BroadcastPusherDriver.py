@@ -19,7 +19,7 @@ class BroadcastPusherDriver(BroadcastContract, BaseDriver):
         self.ssl_message = True
 
     def ssl(self, boolean):
-        """Sets whether to send data with SSL enabled.
+        """Set whether to send data with SSL enabled.
 
         Arguments:
             boolean {bool} -- Boolean on whether to set SSL.

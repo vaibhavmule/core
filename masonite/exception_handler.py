@@ -35,7 +35,7 @@ class ExceptionHandler:
         )
 
     def load_exception(self, exception):
-        """Loads the exception thrown into this handler.
+        """Load the exception thrown into this handler.
 
         Arguments:
             exception {Exception} -- This is the exception object thrown at runtime.

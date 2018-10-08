@@ -9,7 +9,7 @@ class MailMailgunDriver(BaseMailDriver, MailContract):
     """Mailgun driver."""
 
     def send(self, message=None):
-        """Sends the message through the Mailgun service.
+        """Send the message through the Mailgun service.
 
         Keyword Arguments:
             message {string} -- The message to be sent to Mailgun. (default: {None})

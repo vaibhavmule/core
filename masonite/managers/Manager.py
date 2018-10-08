@@ -23,7 +23,7 @@ class Manager:
         self.container = container
 
     def load_container(self, container):
-        """Loads the container into the class and creates the default driver.
+        """Load the container into the class and creates the default driver.
 
         Arguments:
             container {masonite.app.App} -- The container class
@@ -36,7 +36,7 @@ class Manager:
         return self
 
     def driver(self, driver):
-        """Creates the driver specified and returns the driver instance.
+        """Create the driver specified and returns the driver instance.
 
         Arguments:
             driver {masonite.drivers.Driver} -- An instance of a Driver class.
@@ -48,7 +48,7 @@ class Manager:
         return self.container.resolve(self.manage_driver).load_manager(self)
 
     def create_driver(self, driver=None):
-        """Creates the driver to be used.
+        """Create the driver to be used.
     
         This could be used as the default driver when the manager is created or called internally on the fly
         to change to a specific driver
