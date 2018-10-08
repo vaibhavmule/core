@@ -6,8 +6,7 @@ from masonite.app import App
 
 
 class SessionMemoryDriver(SessionContract, BaseDriver):
-    """Memory Session Driver.
-    """
+    """Memory Session Driver."""
 
     _session = {}
     _flash = {}
@@ -89,7 +88,8 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
 
         Keyword Arguments:
             flash_only {bool} -- If only flash data should be deleted. (default: {False})
-        """        ip = self.__get_client_address()
+        """
+        ip = self.__get_client_address()
 
         if flash_only:
             if ip in self._flash:
@@ -157,6 +157,5 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         return session
 
     def helper(self):
-        """Used to create builtin helper function.
-        """
+        """Used to create builtin helper function."""
         return self
