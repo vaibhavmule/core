@@ -49,7 +49,7 @@ class App:
 
     def simple(self, obj):
         """Easy way to bind classes into the container by using passing the object only.
-        
+
         Automatically generates the key for the binding process.
 
         Arguments:
@@ -107,7 +107,7 @@ class App:
 
     def helper(self):
         """Add a helper to create builtin functions.
-    
+
         Used to more simply return
         instances of this class when building helpers.
 

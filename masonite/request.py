@@ -698,7 +698,7 @@ class Request(Extendable):
 
     def compile_route_to_url(self, route, params={}):
         """Compile the route url into a usable url.
-    
+
         Converts /url/@id into /url/1. Used for redirection
 
         Arguments:
