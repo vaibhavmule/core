@@ -14,7 +14,6 @@ class Validator:
         Keyword Arguments:
             request {masonite.request.Request} -- Request class. (default: {None})
         """
-
         self.request = request
         self.validation_dictionary = {}
         self.check_manual_dictionary = False
@@ -29,7 +28,6 @@ class Validator:
         Returns:
             self
         """
-
         self.validation_dictionary = dictionary
         return self
 
@@ -42,7 +40,6 @@ class Validator:
         Returns:
             bool|dict
         """
-
         if check_manual_dictionary:
             self.check_manual_dictionary = check_manual_dictionary
         return self.run_validation()[0]
@@ -53,7 +50,6 @@ class Validator:
         Returns:
             None|dict
         """
-
         validation = self.run_validation()
         for message in self.error_messages:
             if message in validation[1]:
@@ -70,7 +66,6 @@ class Validator:
         Returns:
             bool|dict
         """
-
         validation_dict = self.load_request_input()
         for validation in validation_dict:
             validation_dict.update({
