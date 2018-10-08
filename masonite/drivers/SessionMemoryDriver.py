@@ -1,4 +1,4 @@
-"""Session Memory Module"""
+"""Session Memory Module."""
 
 from masonite.contracts import SessionContract
 from masonite.drivers import BaseDriver
@@ -6,14 +6,14 @@ from masonite.app import App
 
 
 class SessionMemoryDriver(SessionContract, BaseDriver):
-    """Memory Session Driver
+    """Memory Session Driver.
     """
 
     _session = {}
     _flash = {}
 
     def __init__(self, app: App):
-        """Cookie Session Constructor
+        """Cookie Session Constructor.
 
         Arguments:
             Environ {dict} -- The WSGI environment
@@ -50,7 +50,7 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         self._session[ip][key] = value
 
     def has(self, key):
-        """Check if a key exists in the session
+        """Check if a key exists in the session.
 
         Arguments:
             key {string} -- The key to check for in the session.
@@ -64,7 +64,7 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         return False
 
     def all(self):
-        """Get all session data
+        """Get all session data.
 
         Returns:
             dict
@@ -85,7 +85,7 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         self._flash[ip][key] = value
 
     def reset(self, flash_only=False):
-        """Delete all session data
+        """Delete all session data.
 
         Keyword Arguments:
             flash_only {bool} -- If only flash data should be deleted. (default: {False})
@@ -116,15 +116,14 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         return False
 
     def __get_client_address(self):
-        """        Get ip from the client
-        """
+        """Get ip from the client."""
         if 'HTTP_X_FORWARDED_FOR' in self.environ:
             return self.environ['HTTP_X_FORWARDED_FOR'].split(',')[-1].strip()
 
         return self.environ['REMOTE_ADDR']
 
     def __collect_data(self, key=False):
-        """Collect data from session and flash data
+        """Collect data from session and flash data.
 
         Returns:
             dict
@@ -158,6 +157,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         return session
 
     def helper(self):
-        """Used to create builtin helper function
+        """Used to create builtin helper function.
         """
         return self
