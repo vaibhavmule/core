@@ -1,4 +1,4 @@
-""" Verify Email Module """
+"""Verify Email Module"""
 
 import time
 

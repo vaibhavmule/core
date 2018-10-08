@@ -1,4 +1,4 @@
-""" CSRF Middleware """
+"""CSRF Middleware"""
 from masonite.exceptions import InvalidCSRFToken
 from masonite.request import Request
 from masonite.auth import Csrf
@@ -7,7 +7,7 @@ from jinja2 import Markup
 
 
 class CsrfMiddleware:
-    """ Verify CSRF Token Middleware """
+    """Verify CSRF Token Middleware"""
 
     exempt = ['/']
 

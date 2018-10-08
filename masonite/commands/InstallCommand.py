@@ -1,4 +1,4 @@
-""" Install Command """
+"""Install Command"""
 import os
 import shutil
 import subprocess

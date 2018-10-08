@@ -1,4 +1,4 @@
-""" Session Memory Module """
+"""Session Memory Module"""
 
 from masonite.contracts import SessionContract
 from masonite.drivers import BaseDriver

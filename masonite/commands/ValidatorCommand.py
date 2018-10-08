@@ -1,4 +1,4 @@
-""" New Validator Command """
+"""New Validator Command"""
 from masonite.commands import BaseScaffoldCommand
 
 

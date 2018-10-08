@@ -1,4 +1,4 @@
-""" A SassProvider Service Provider """
+"""A SassProvider Service Provider"""
 
 from masonite.provider import ServiceProvider
 from masonite.storage import Storage

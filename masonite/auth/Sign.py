@@ -1,4 +1,4 @@
-""" Cryptographic Signing Module """
+"""Cryptographic Signing Module"""
 import binascii
 
 from cryptography.fernet import Fernet

@@ -1,4 +1,4 @@
-""" The RegisterController Module """
+"""The RegisterController Module"""
 
 from config import auth
 from masonite.auth import Auth

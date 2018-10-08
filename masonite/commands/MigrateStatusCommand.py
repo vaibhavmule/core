@@ -1,4 +1,4 @@
-""" Migrate Status Command """
+"""Migrate Status Command"""
 import os
 import sys
 

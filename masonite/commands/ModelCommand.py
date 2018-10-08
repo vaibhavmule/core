@@ -1,4 +1,4 @@
-""" New Model Command """
+"""New Model Command"""
 from masonite.commands import BaseScaffoldCommand
 
 

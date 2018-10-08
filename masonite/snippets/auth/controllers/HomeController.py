@@ -1,4 +1,4 @@
-""" The HomeController Module """
+"""The HomeController Module"""
 
 from masonite.auth import Auth
 from masonite.request import Request

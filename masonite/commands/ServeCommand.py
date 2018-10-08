@@ -1,4 +1,4 @@
-""" Serve Masonite Application Command """
+"""Serve Masonite Application Command"""
 import os
 import sys
 import time

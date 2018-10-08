@@ -1,4 +1,4 @@
-""" View Helper Module """
+"""View Helper Module"""
 
 from jinja2 import Markup
 

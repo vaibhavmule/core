@@ -1,4 +1,4 @@
-""" New Providers Command """
+"""New Providers Command"""
 from masonite.commands import BaseScaffoldCommand
 
 

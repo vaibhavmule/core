@@ -1,4 +1,4 @@
-""" Time Module """
+"""Time Module"""
 
 import pendulum
 

@@ -1,4 +1,4 @@
-""" A WhiteNoiseProvider Service Provider """
+"""A WhiteNoiseProvider Service Provider"""
 
 from whitenoise import WhiteNoise
 

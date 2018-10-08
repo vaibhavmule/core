@@ -1,4 +1,4 @@
-""" Module for the Service Provider """
+"""Module for the Service Provider"""
 
 from masonite.helpers import random_string
 

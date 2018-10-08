@@ -1,4 +1,4 @@
-""" CSRF Protection Module """
+"""CSRF Protection Module"""
 import binascii
 import os
 

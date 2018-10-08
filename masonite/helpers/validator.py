@@ -1,4 +1,4 @@
-""" Validator Helper Module """
+"""Validator Helper Module"""
 
 from ..validator import Validator
 

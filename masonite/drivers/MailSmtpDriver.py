@@ -1,4 +1,4 @@
-""" SMTP Driver Module """
+"""SMTP Driver Module"""
 
 import smtplib
 from email.mime.multipart import MIMEMultipart

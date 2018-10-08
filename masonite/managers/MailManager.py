@@ -1,4 +1,4 @@
-""" Mail Manager Module """
+"""Mail Manager Module"""
 
 from masonite.contracts import MailManagerContract
 from masonite.managers import Manager

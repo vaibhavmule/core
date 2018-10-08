@@ -1,4 +1,4 @@
-""" Migrate Reset Command """
+"""Migrate Reset Command"""
 import os
 import sys
 

@@ -1,4 +1,4 @@
-""" Upload Manager Module """
+"""Upload Manager Module"""
 
 from masonite.contracts import UploadManagerContract
 from masonite.managers import Manager

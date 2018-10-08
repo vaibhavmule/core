@@ -1,4 +1,4 @@
-""" Up Command """
+"""Up Command"""
 
 import os
 

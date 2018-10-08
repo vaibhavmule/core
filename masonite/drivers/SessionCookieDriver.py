@@ -1,4 +1,4 @@
-""" Session Cookie Module """
+"""Session Cookie Module"""
 
 import json
 

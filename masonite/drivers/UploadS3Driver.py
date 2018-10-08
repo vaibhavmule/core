@@ -1,4 +1,4 @@
-""" Upload S3 Driver """
+"""Upload S3 Driver"""
 
 from masonite.contracts import UploadContract
 from masonite.drivers import BaseUploadDriver

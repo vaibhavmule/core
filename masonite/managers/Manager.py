@@ -1,4 +1,4 @@
-""" Manager Module """
+"""Manager Module"""
 
 import inspect
 

@@ -1,4 +1,4 @@
-""" Mailgun Driver Module """
+"""Mailgun Driver Module"""
 import requests
 
 from masonite.contracts.MailContract import MailContract

@@ -1,4 +1,4 @@
-""" New Key Command """
+"""New Key Command"""
 from cleo import Command
 from cryptography.fernet import Fernet
 

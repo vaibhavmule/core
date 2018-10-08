@@ -1,4 +1,4 @@
-""" Migrate Refresh Command """
+"""Migrate Refresh Command"""
 
 from cleo import Command
 

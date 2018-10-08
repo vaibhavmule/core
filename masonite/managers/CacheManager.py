@@ -1,4 +1,4 @@
-""" Cache Manager """
+"""Cache Manager"""
 
 from masonite.contracts import CacheManagerContract
 from masonite.managers import Manager

@@ -1,4 +1,4 @@
-""" The ConfirmController Module """
+"""The ConfirmController Module"""
 import time
 import datetime
 

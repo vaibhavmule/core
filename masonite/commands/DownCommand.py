@@ -1,4 +1,4 @@
-""" Down Command """
+"""Down Command"""
 
 from cleo import Command
 

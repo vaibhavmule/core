@@ -1,4 +1,4 @@
-""" Queue Manager Module """
+"""Queue Manager Module"""
 
 from masonite.contracts import QueueManagerContract
 from masonite.managers import Manager

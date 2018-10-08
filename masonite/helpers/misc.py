@@ -1,4 +1,4 @@
-""" Module for miscellaneous helper methods """
+"""Module for miscellaneous helper methods"""
 
 import random
 import string

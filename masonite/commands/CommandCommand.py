@@ -1,4 +1,4 @@
-""" Creates New Command Command """
+"""Creates New Command Command"""
 from masonite.commands import BaseScaffoldCommand
 
 

@@ -1,4 +1,4 @@
-""" Run Migration Command """
+"""Run Migration Command"""
 import os
 import sys
 

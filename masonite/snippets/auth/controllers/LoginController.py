@@ -1,4 +1,4 @@
-""" A LoginController Module """
+"""A LoginController Module"""
 
 from masonite.auth import Auth
 from masonite.request import Request

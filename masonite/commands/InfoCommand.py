@@ -1,4 +1,4 @@
-""" Displays Information Command """
+"""Displays Information Command"""
 import math
 import os
 import platform

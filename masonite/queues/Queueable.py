@@ -1,4 +1,4 @@
-""" Base Queue Module """
+"""Base Queue Module"""
 
 
 class Queueable:

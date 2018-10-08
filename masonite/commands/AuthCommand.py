@@ -1,4 +1,4 @@
-""" New Authentication System Command """
+"""New Authentication System Command"""
 import os
 import shutil
 

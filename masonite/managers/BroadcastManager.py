@@ -1,4 +1,4 @@
-""" Broadcast Manager Module """
+"""Broadcast Manager Module"""
 
 from masonite.contracts import BroadcastManagerContract
 from masonite.managers import Manager

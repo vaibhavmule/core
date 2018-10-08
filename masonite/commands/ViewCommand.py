@@ -1,4 +1,4 @@
-""" New View Command """
+"""New View Command"""
 import os
 
 from cleo import Command

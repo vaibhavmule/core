@@ -1,4 +1,4 @@
-""" Session Manager Module """
+"""Session Manager Module"""
 
 from masonite.contracts import SessionManagerContract
 from masonite.managers import Manager

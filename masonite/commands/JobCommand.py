@@ -1,4 +1,4 @@
-""" New Job Command """
+"""New Job Command"""
 from masonite.commands import BaseScaffoldCommand
 
 

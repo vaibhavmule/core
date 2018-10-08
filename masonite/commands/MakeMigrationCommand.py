@@ -1,4 +1,4 @@
-""" New Migration Command """
+"""New Migration Command"""
 import subprocess
 
 from cleo import Command

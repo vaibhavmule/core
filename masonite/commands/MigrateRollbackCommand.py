@@ -1,4 +1,4 @@
-""" Migrate Rollback Command """
+"""Migrate Rollback Command"""
 import os
 import sys
 

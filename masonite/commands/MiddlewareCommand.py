@@ -1,4 +1,4 @@
-""" New Middleware Command """
+"""New Middleware Command"""
 from masonite.commands import BaseScaffoldCommand
 
 

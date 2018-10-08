@@ -1,4 +1,4 @@
-""" View Module """
+"""View Module"""
 
 
 from jinja2 import ChoiceLoader, Environment, PackageLoader, select_autoescape
