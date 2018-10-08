@@ -5,6 +5,7 @@ import inspect
 
 class Extendable:
     """Add the ability to extend classes on the fly."""
+
     def extend(self, key, obj=None):
         """Extend the current class with an object.
 

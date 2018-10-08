@@ -17,4 +17,5 @@ class BroadcastManager(Manager, BroadcastManagerContract):
 
 class Broadcast:
     """Dummy class that will be used to swap out the manager in the container."""
+
     pass
