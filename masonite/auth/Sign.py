@@ -20,7 +20,6 @@ class Sign:
         Raises:
             InvalidSecretKey -- Thrown if the secret key does not exist.
         """
-
         if key:
             self.key = key
         else:
@@ -45,7 +44,6 @@ class Sign:
         Raises:
             InvalidSecretKey -- Thrown if the secret key has incorrect padding.
         """
-
         try:
             f = Fernet(self.key)
         except (binascii.Error, ValueError):
@@ -64,7 +62,6 @@ class Sign:
         Returns:
             string -- Returns the unencrypted value.
         """
-
         f = Fernet(self.key)
 
         if not value:

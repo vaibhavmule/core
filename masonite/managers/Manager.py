@@ -20,7 +20,6 @@ class Manager:
         Keyword Arguments:
             container {masonite.app.App} -- The container class (default: {None})
         """
-
         self.manage_driver = None
         self.container = container
 
@@ -33,7 +32,6 @@ class Manager:
         Returns:
             self
         """
-
         self.container = container
         self.create_driver()
         return self
@@ -47,7 +45,6 @@ class Manager:
         Returns:
             masonite.drivers.Driver -- Returns a driver which is an instance of the base Driver class.
         """
-
         self.create_driver(driver)
         return self.container.resolve(self.manage_driver).load_manager(self)
 
@@ -63,7 +60,6 @@ class Manager:
             UnacceptableDriverType -- Raised when a driver passed in is not a string or a class
             DriverNotFound -- Raised when the driver can not be found.
         """
-
         if not driver:
             driver = self.container.make(self.config).DRIVER.capitalize()
         else:

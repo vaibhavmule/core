@@ -21,7 +21,6 @@ class CacheDiskDriver(CacheContract, BaseDriver):
             CacheConfig {config.cache} -- Cache configuration module.
             Application {config.application} -- Application configuration module.
         """
-
         self.config = app.make('CacheConfig')
         self.appconfig = app.make('Application')
         self.cache_forever = None
@@ -40,7 +39,6 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         Returns:
             string -- Returns the key
         """
-
         self.cache_forever = True
         if not location:
             location = self.config.DRIVERS['disk']['location']
@@ -73,7 +71,6 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         Returns:
             string -- Returns the key
         """
-
         self.cache_forever = False
         cache_type = cache_type.lower()
         calc = 0
@@ -110,7 +107,6 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         """
         Get the data from a key in the cache
         """
-
         if not self.is_valid(key):
             return None
 
@@ -133,7 +129,6 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         """
         Delete file cache
         """
-
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:
             glob_path = cache_path + key + '*'
@@ -147,7 +142,6 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         """
             Updates a specific cache by key
         """
-
         if not location:
             location = self.config.DRIVERS['disk']['location'] + "/"
 
@@ -162,7 +156,6 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         """
         Check if the cache exists
         """
-
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:
             glob_path = cache_path + key + '*'
@@ -178,7 +171,6 @@ class CacheDiskDriver(CacheContract, BaseDriver):
         """
         Check if a valid cache
         """
-
         cache_path = self.config.DRIVERS['disk']['location'] + "/"
         if self.cache_forever:
             glob_path = cache_path + key + '*'

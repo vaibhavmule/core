@@ -71,7 +71,6 @@ class Request(Extendable):
         Returns:
             string
         """
-
         if '.' in name:
             name = dot(name, "{1}[{.}]")
         return self.request_variables.get(name, default)
@@ -119,7 +118,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         self.encryption_key = key
         return self
 
@@ -132,7 +130,6 @@ class Request(Extendable):
         Returns:
             dict
         """
-
         if not internal_variables:
             without_internals = {}
             for key, value in self.request_variables.items():
@@ -148,7 +145,6 @@ class Request(Extendable):
         Returns:
             dict
         """
-
         only_vars = {}
 
         for name in names:
@@ -162,7 +158,6 @@ class Request(Extendable):
         Returns:
             dict
         """
-
         only_vars = {}
 
         for name in self.request_variables.keys():
@@ -180,7 +175,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         self.container = app
         return self
 
@@ -193,7 +187,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         self.environ = environ
         self.method = environ['REQUEST_METHOD']
         self.path = environ['PATH_INFO']
@@ -211,7 +204,6 @@ class Request(Extendable):
         Arguments:
             variables {string|dict}
         """
-
         if isinstance(variables, str):
             variables = parse_qs(variables)
 
@@ -269,7 +261,6 @@ class Request(Extendable):
         Returns:
             masonite.app.App -- Application container
         """
-
         return self.container
 
     def has(self, *args):
@@ -278,7 +269,6 @@ class Request(Extendable):
         Returns:
             bool
         """
-
         return all((arg in self.request_variables) for arg in args)
 
     def status(self, status):
@@ -306,7 +296,6 @@ class Request(Extendable):
         Returns:
             string -- Returns the status code (404 Not Found, 200 OK, etc)
         """
-
         return self.app().make('StatusCode')
 
     def get_request_method(self):
@@ -315,7 +304,6 @@ class Request(Extendable):
         Returns:
             string -- returns GET, POST, PUT, etc
         """
-
         return self.environ['REQUEST_METHOD']
 
     def header(self, key, value=None, http_prefix=None):
@@ -332,7 +320,6 @@ class Request(Extendable):
         Returns:
             string|None|True -- Either return the value if getting a header, None if it doesn't exist or True if setting the headers.
         """
-
         if isinstance(key, dict):
             for key, value in key.items():
                 self._set_header(key, value, http_prefix)
@@ -367,14 +354,12 @@ class Request(Extendable):
         Returns:
             dict -- Dictionary of all headers.
         """
-
         return self._headers
 
     def reset_headers(self):
         """Resets all headers being set. Typically ran at the end of the request
         because of this object acts like a singleton.
         """
-
         self._headers = []
 
     def set_params(self, params):
@@ -388,7 +373,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         self.url_params.update(params)
         return self
 
@@ -403,7 +387,6 @@ class Request(Extendable):
         Returns:
             string|False -- Returns False if key does not exist.
         """
-
         if parameter in self.url_params:
             return self.url_params[parameter]
         return False
@@ -425,7 +408,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         if encrypt:
             value = Sign(self.encryption_key).sign(value)
         else:
@@ -449,7 +431,6 @@ class Request(Extendable):
         Returns:
             dict -- Returns all the cookies.
         """
-
         return self.cookies
 
     def get_cookie(self, provided_cookie, decrypt=True):
@@ -466,7 +447,6 @@ class Request(Extendable):
         Returns:
             string|None -- Returns None if the cookie does not exist.
         """
-
         if 'HTTP_COOKIE' in self.environ:
             grab_cookie = cookies.SimpleCookie(self.environ['HTTP_COOKIE'])
 
@@ -491,7 +471,6 @@ class Request(Extendable):
             key {string} -- Name of cookie to be stored
             value {string} -- Value of cookie to be stored
         """
-
         if 'HTTP_COOKIE' in self.environ and self.environ['HTTP_COOKIE']:
             self.environ['HTTP_COOKIE'] += ';{0}={1}'.format(
                 key, value)
@@ -508,7 +487,6 @@ class Request(Extendable):
         Returns:
             bool -- Whether or not the cookie was successfully deleted.
         """
-
         self.cookie(key, '', expires='expired')
 
         if 'HTTP_COOKIE' in self.environ and self.environ['HTTP_COOKIE']:
@@ -533,7 +511,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         self.user_model = user_model
         return self
 
@@ -543,7 +520,6 @@ class Request(Extendable):
         Returns:
             app.User.User|None -- Returns None if the user is not loaded or logged in.
         """
-
         return self.user_model
 
     def redirect(self, route, params={}):
@@ -560,7 +536,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         self.redirect_url = self.compile_route_to_url(route, params)
         self.status(302)
         return self
@@ -579,7 +554,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         self.redirect_url = self._get_named_route(route_name, params)
         self.status(302)
 
@@ -596,7 +570,6 @@ class Request(Extendable):
             string|None -- Returns None if the route was not found or returns the
                            compiled URI.
         """
-
         web_routes = self.container.make('WebRoutes')
 
         for route in web_routes:
@@ -617,7 +590,6 @@ class Request(Extendable):
         Returns:
             masonite.routes.Route|None -- Returns None if the route could not be found.
         """
-
         web_routes = self.container.make('WebRoutes')
 
         if not isinstance(controller, str):
@@ -643,7 +615,6 @@ class Request(Extendable):
         Returns:
             masonite.routes.Route|None -- Returns None if the route could not be found.
         """
-
         return self.compile_route_to_url(self._get_route_from_controller(controller).route_url, params)
 
     def route(self, name, params={}, full=False):
@@ -659,7 +630,6 @@ class Request(Extendable):
         Returns:
             masonite.routes.Route|None -- Returns None if the route cannot be found.
         """
-
         if full:
             return application.URL + self._get_named_route(name, params)
 
@@ -668,7 +638,6 @@ class Request(Extendable):
     def reset_redirections(self):
         """Resets the redirections because of this class acting like a singleton pattern.
         """
-
         self.redirect_url = False
         self.redirect_route = False
 
@@ -681,7 +650,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         redirect_url = self.input('__back')
         if not redirect_url and default:
             return self.redirect(default)
@@ -702,7 +670,6 @@ class Request(Extendable):
         Returns:
             bool
         """
-
         if self._get_named_route(name, params) == self.path:
             return True
 
@@ -717,7 +684,6 @@ class Request(Extendable):
         Returns:
             bool
         """
-
         return re.match(compile_route_to_regex(route), self.path)
 
     def compile_route_to_url(self, route, params={}):
@@ -733,7 +699,6 @@ class Request(Extendable):
         Returns:
             string -- Returns a compiled string (/dashboard/joseph/1)
         """
-
         if "http" in route:
             return route
 
@@ -766,7 +731,6 @@ class Request(Extendable):
     def activate_subdomains(self):
         """Activates subdomains abilities
         """
-
         self._activate_subdomains = True
 
     def has_subdomain(self):
@@ -775,7 +739,6 @@ class Request(Extendable):
         Returns:
             bool
         """
-
         if self._activate_subdomains:
             url = tldextract.extract(self.environ['HTTP_HOST'])
 
@@ -795,7 +758,6 @@ class Request(Extendable):
         Returns:
             self
         """
-
         self.set_params(params)
         return self
 
@@ -805,13 +767,11 @@ class Request(Extendable):
         Returns:
             self
         """
-
         return self
 
     def pop(self, *input_variables):
         """Deletes keys from the request input.
         """
-
         for key in input_variables:
             if key in self.request_variables:
                 del self.request_variables[key]

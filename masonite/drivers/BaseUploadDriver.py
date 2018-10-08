@@ -17,7 +17,6 @@ class BaseUploadDriver(BaseDriver):
         Returns:
             self
         """
-
         self.accept_file_types = args
         return self
 
@@ -30,7 +29,6 @@ class BaseUploadDriver(BaseDriver):
         Raises:
             FileTypeException -- Thrown if the specified file extension is incorrect.
         """
-
         if self.accept_file_types is not None:
             if not filename.endswith(self.accept_file_types):
                 raise FileTypeException("The extension file not is valid.")
@@ -44,7 +42,6 @@ class BaseUploadDriver(BaseDriver):
         Returns:
             string -- Returns the location it uploaded to.
         """
-
         if not location:
             location = self.config.DRIVERS['disk']['location']
 

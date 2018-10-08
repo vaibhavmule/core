@@ -20,6 +20,5 @@ class Controller:
         Returns:
             self
         """
-
         self.app = app
         return self

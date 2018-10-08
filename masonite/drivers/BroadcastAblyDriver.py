@@ -17,7 +17,6 @@ class BroadcastAblyDriver(BroadcastContract, BaseDriver):
         Arguments:
             BroadcastConfig {config.broadcast} -- Broadcast configuration setting.
         """
-
         self.config = app.make('BroadcastConfig')
         self.ssl_message = True
 
@@ -30,7 +29,6 @@ class BroadcastAblyDriver(BroadcastContract, BaseDriver):
         Returns:
             self
         """
-
         self.ssl_message = boolean
         return self
 
@@ -50,7 +48,6 @@ class BroadcastAblyDriver(BroadcastContract, BaseDriver):
         Returns:
             string -- Returns the message sent.
         """
-
         try:
             from ably import AblyRest
         except ImportError:

@@ -6,7 +6,6 @@ import inspect
 class Extendable:
     """Adds the ability to extend classes on the fly.
     """
-
     def extend(self, key, obj=None):
         """Extends the current class with an object.
         This essentially extends a class on the fly.
@@ -20,7 +19,6 @@ class Extendable:
         Returns:
             self
         """
-
         # If both key and an object is passed
         if obj:
             if inspect.ismethod(obj):

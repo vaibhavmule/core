@@ -18,7 +18,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         Arguments:
             Environ {dict} -- The WSGI environment
         """
-
         self.environ = app.make('Environ')
 
     def get(self, key):
@@ -30,7 +29,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         Returns:
             string|None - Returns None if a value does not exist.
         """
-
         data = self.__collect_data(key)
         if data:
             return data
@@ -44,7 +42,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
             key {string} -- The key to set as the session key.
             value {string} -- The value to set in the session.
         """
-
         ip = self.__get_client_address()
 
         if ip not in self._session:
@@ -61,7 +58,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         Returns:
             bool
         """
-
         data = self.__collect_data()
         if data and key in data:
             return True
@@ -73,7 +69,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         Returns:
             dict
         """
-
         return self.__collect_data()
 
     def flash(self, key, value):
@@ -83,7 +78,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
             key {string} -- The key to set as the session key.
             value {string} -- The value to set in the session.
         """
-
         ip = self.__get_client_address()
         if ip not in self._flash:
             self._flash[ip] = {}
@@ -95,8 +89,7 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
 
         Keyword Arguments:
             flash_only {bool} -- If only flash data should be deleted. (default: {False})
-        """
-        ip = self.__get_client_address()
+        """        ip = self.__get_client_address()
 
         if flash_only:
             if ip in self._flash:
@@ -114,7 +107,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         Returns:
             bool -- If the key was deleted or not
         """
-
         data = self.__collect_data()
 
         if key in data:
@@ -124,10 +116,8 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         return False
 
     def __get_client_address(self):
+        """        Get ip from the client
         """
-        Get ip from the client
-        """
-
         if 'HTTP_X_FORWARDED_FOR' in self.environ:
             return self.environ['HTTP_X_FORWARDED_FOR'].split(',')[-1].strip()
 
@@ -139,7 +129,6 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
         Returns:
             dict
         """
-
         ip = self.__get_client_address()
 
         # Declare a new dictionary
@@ -171,5 +160,4 @@ class SessionMemoryDriver(SessionContract, BaseDriver):
     def helper(self):
         """Used to create builtin helper function
         """
-
         return self

@@ -13,7 +13,6 @@ class Storage:
     def __init__(self):
         """Storage constructor.
         """
-
         pass
 
     def compile_sass(self):

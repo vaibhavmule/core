@@ -16,7 +16,6 @@ class App:
     def __init__(self, strict=False, override=True, resolve_parameters=False):
         """App class constructor
         """
-
         self.providers = {}
         self.strict = strict
         self.override = override
@@ -39,7 +38,6 @@ class App:
         Returns:
             self
         """
-
         if self.strict and name in self.providers:
             raise StrictContainerException(
                 'You cannot override a key inside a strict container')
@@ -60,7 +58,6 @@ class App:
         Returns:
             self
         """
-
         self.bind(obj if inspect.isclass(obj) else obj.__class__, obj)
         return self
 
@@ -76,7 +73,6 @@ class App:
         Returns:
             object -- Returns the object that is fetched.
         """
-
         if name in self.providers:
             obj = self.providers[name]
             self.fire_hook('make', name, obj)
@@ -98,7 +94,6 @@ class App:
         Returns:
             bool
         """
-
         if isinstance(name, str):
             return name in self.providers
         else:
@@ -117,7 +112,6 @@ class App:
         Returns:
             self
         """
-
         return self
 
     def resolve(self, obj):
@@ -130,7 +124,6 @@ class App:
         Returns:
             object -- The object you tried resolving but with the correct dependencies injected.
         """
-
         provider_list = []
 
         for _, value in inspect.signature(obj).parameters.items():
@@ -157,7 +150,6 @@ class App:
         Returns:
             dict -- Returns a dictionary of collected objects and their key bindings.
         """
-
         provider_list = {}
         if isinstance(search, str):
             # Search Can Be:
@@ -197,7 +189,6 @@ class App:
         Returns:
             object -- Returns the object found in the container.
         """
-
         if parameter.annotation in self.swaps:
             obj = self.swaps[parameter.annotation]
             if callable(obj):
@@ -231,7 +222,6 @@ class App:
         Returns:
             object -- Returns the object found in the container
         """
-
         parameter = str(parameter)
         if parameter is not 'self' and parameter in self.providers:
             obj = self.providers[parameter]
@@ -252,7 +242,6 @@ class App:
         Returns:
             self
         """
-
         return self._bind_hook('bind', key, obj)
 
     def on_make(self, key, obj):
@@ -265,7 +254,6 @@ class App:
         Returns:
             self
         """
-
         return self._bind_hook('make', key, obj)
 
     def on_resolve(self, key, obj):
@@ -278,7 +266,6 @@ class App:
         Returns:
             self
         """
-
         return self._bind_hook('resolve', key, obj)
 
     def swap(self, obj, callback):
@@ -296,7 +283,6 @@ class App:
         Returns:
             None
         """
-
         if str(key) in self._hooks[action] or \
                 inspect.isclass(obj) and \
                 obj in self._hooks[action] or obj.__class__ in self._hooks[action]:
@@ -316,7 +302,6 @@ class App:
         Returns:
             self
         """
-
         if key in self._hooks[hook]:
             self._hooks[hook][key].append(obj)
         else:
@@ -335,7 +320,6 @@ class App:
         Returns:
             object -- Returns the object in the container
         """
-
         for _, provider_class in self.providers.items():
             if obj == provider_class or obj == provider_class.__class__:
                 return_obj = provider_class

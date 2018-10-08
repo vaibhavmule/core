@@ -19,7 +19,6 @@ class UploadS3Driver(BaseUploadDriver, UploadContract):
             UploadManager {masonite.managers.UploadManager} -- The Upload Manager object.
             StorageConfig {config.storage} -- Storage configuration.
         """
-
         self.upload = upload
         self.config = app.make('StorageConfig')
 
@@ -38,7 +37,6 @@ class UploadS3Driver(BaseUploadDriver, UploadContract):
         Returns:
             string -- Returns the file name just saved.
         """
-
         driver = self.upload.driver('disk')
         driver.store(fileitem, location)
         file_location = driver.file_location
@@ -80,7 +78,6 @@ class UploadS3Driver(BaseUploadDriver, UploadContract):
         Returns:
             string -- Returns the file name just saved.
         """
-
         fileitem.filename = prepend + fileitem.filename
 
         return self.store(fileitem, location=location)

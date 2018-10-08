@@ -16,7 +16,6 @@ def validate(validations, data, messages={}):
     Returns:
         Bool|dict -- Returns True if validations are good or a dictionary if there are errors.
     """
-
     validator = Validator().validate(validations)
     validator.error_messages = messages
     if validator.check(data):

@@ -19,7 +19,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
             Environ {dict} -- The WSGI environment
             Request {masonite.request.Request} -- The Request class.
         """
-
         self.environ = app.make('Environ')
         self.request = request
 
@@ -32,7 +31,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         Returns:
             string|None - Returns None if a value does not exist.
         """
-
         cookie = self.request.get_cookie('s_{0}'.format(key))
         if cookie:
             return self._get_serialization_value(cookie)
@@ -46,7 +44,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
             key {string} -- The key to set as the session key.
             value {string} -- The value to set in the session.
         """
-
         if isinstance(value, dict):
             value = json.dumps(value)
 
@@ -61,7 +58,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         Returns:
             bool
         """
-
         if self.get(key):
             return True
         return False
@@ -72,7 +68,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         Returns:
             dict
         """
-
         return self.__collect_data()
 
     def delete(self, key):
@@ -84,7 +79,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         Returns:
             bool -- If the key was deleted or not
         """
-
         self.__collect_data()
 
         if self.request.get_cookie('s_{}'.format(key)):
@@ -99,7 +93,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         Returns:
             dict
         """
-
         cookies = {}
         if 'HTTP_COOKIE' in self.environ and self.environ['HTTP_COOKIE']:
             cookies_original = self.environ['HTTP_COOKIE'].split(';')
@@ -117,7 +110,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
             key {string} -- The key to set as the session key.
             value {string} -- The value to set in the session.
         """
-
         if isinstance(value, dict):
             value = json.dumps(value)
 
@@ -129,7 +121,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
         Keyword Arguments:
             flash_only {bool} -- If only flash data should be deleted. (default: {False})
         """
-
         cookies = self.__collect_data()
         for cookie in cookies:
             self.request.delete_cookie('s_{0}'.format(cookie))
@@ -137,7 +128,6 @@ class SessionCookieDriver(SessionContract, BaseDriver):
     def helper(self):
         """Used to create builtin helper function
         """
-
         return self
 
     def _get_serialization_value(self, value):

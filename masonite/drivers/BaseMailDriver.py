@@ -17,7 +17,6 @@ class BaseMailDriver(BaseDriver):
             MailConfig {module} -- This is the config.mail module.
             View {object} -- This is the masonite.view.View class.
         """
-
         self.config = app.make('MailConfig')
         self.to_address = None
         self.from_address = self.config.FROM
@@ -34,7 +33,6 @@ class BaseMailDriver(BaseDriver):
         Returns:
             self
         """
-
         if callable(user_email):
             user_email = user_email.email
 
@@ -53,7 +51,6 @@ class BaseMailDriver(BaseDriver):
         Returns:
             self
         """
-
         self.message_body = self.view.render(template_name, dictionary).rendered_template
         return self
 
@@ -66,7 +63,6 @@ class BaseMailDriver(BaseDriver):
         Returns:
             self
         """
-
         self.from_address = address
         return self
 
@@ -79,6 +75,5 @@ class BaseMailDriver(BaseDriver):
         Returns:
             self
         """
-
         self.message_subject = subject
         return self

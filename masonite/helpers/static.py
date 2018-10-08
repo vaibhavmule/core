@@ -13,7 +13,6 @@ def static(alias, file_name):
     Returns:
         string -- Returns the file location.
     """
-
     if '.' in alias:
         alias = alias.split('.')
         location = DRIVERS[alias[0]]['location'][alias[1]]

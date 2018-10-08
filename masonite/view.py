@@ -10,7 +10,6 @@ from masonite.exceptions import RequiredContainerBindingNotFound
 def view(template='index', dictionary={}):
     """DEPRECATED
     """
-
     env = Environment(
         loader=PackageLoader('resources', 'templates'),
         autoescape=select_autoescape(['html', 'xml'])
@@ -31,7 +30,6 @@ class View:
         Arguments:
             container {masonite.app.App} -- Container object.
         """
-
         self.dictionary = {}
         self.composers = {}
         self.container = container
@@ -61,7 +59,6 @@ class View:
         Returns:
             self
         """
-
         self.__load_environment(template)
 
         self.dictionary.update(dictionary)
@@ -88,7 +85,6 @@ class View:
     def _update_from_composers(self):
         """Adds data into the view from specified composers.
         """
-
         # Check if the template is directly specified in the composer
         if self.template in self.composers:
             self.dictionary.update(self.composers[self.template])
@@ -121,7 +117,6 @@ class View:
         Returns:
             self
         """
-
         if isinstance(composer_name, str):
             self.composers[composer_name] = dictionary
 
@@ -134,7 +129,6 @@ class View:
     def extend(self):
         """Extend class.
         """
-
         pass
 
     def share(self, dictionary):
@@ -146,7 +140,6 @@ class View:
         Returns:
             self
         """
-
         self.dictionary.update(dictionary)
         return self
 
@@ -163,7 +156,6 @@ class View:
         Returns:
             self
         """
-
         if not self.container.has('Cache'):
             raise RequiredContainerBindingNotFound(
                 "The 'Cache' container binding is required to use this method and wasn't found in the container. You may be missing a Service Provider"
@@ -185,7 +177,6 @@ class View:
         Returns:
             bool
         """
-
         self.__load_environment(template)
 
         try:
@@ -202,8 +193,7 @@ class View:
 
         Keyword Arguments:
             loader {jinja2.Loader} -- Type of Jinja2 loader to use. (default: {jinja2.PackageLoader})
-        """
-        # loader(package_name, location)
+        """        # loader(package_name, location)
         # /dashboard/templates/dashboard
         if loader == PackageLoader:
             template_location = template_location.split(self._splice)
@@ -221,7 +211,6 @@ class View:
             name {string} -- Key to bind the filter to.
             function {object} -- Function used for the template filter.
         """
-
         self._filters.update({name: function})
 
     def test(self, key, obj):
@@ -234,7 +223,6 @@ class View:
         Arguments:
             template {string} -- Template to load environment from.
         """
-
         self.template = template
         self.filename = template.replace(self._splice, '/') + self.extension
 
@@ -270,7 +258,6 @@ class View:
         Arguments:
             template {string} -- Creates the cached templates.
         """
-
         self.container.make('Cache').store_for(
             template, self.rendered_template,
             self.cache_time, self.cache_type, '.html',
@@ -282,7 +269,6 @@ class View:
         Returns:
             bool
         """
-
         return self.container.make('Cache').exists(self.template)
 
     def __is_expired_cache(self):
@@ -291,7 +277,6 @@ class View:
         Returns:
             bool
         """
-
         # Check if cache_for is set and configurate
         if self.cache_time is None or self.cache_type is None and self.cache:
             return True
@@ -307,7 +292,6 @@ class View:
         Returns:
             self
         """
-
         driver_cache = self.container.make('Cache')
         self.rendered_template = driver_cache.get(self.template)
         return self

@@ -27,7 +27,6 @@ class RegisterController:
         Returns:
             [type] -- [description]
         """
-
         return view.render('auth/register', {'app': request.app().make('Application'), 'Auth': Auth(request)})
 
     def store(self, request: Request, mail_manager: MailManager):
@@ -39,7 +38,6 @@ class RegisterController:
         Returns:
             masonite.request.Request -- The Masonite request class.
         """
-
         password = bcrypt_password(request.input('password'))
 
         user = auth.AUTH['model'].create(

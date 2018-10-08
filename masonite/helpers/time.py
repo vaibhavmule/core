@@ -12,7 +12,6 @@ def cookie_expire_time(str_time):
     Returns:
         pendlum -- Returns Pendulum instance
     """
-
     if str_time is not 'expired':
         number = int(str_time.split(" ")[0])
         length = str_time.split(" ")[1]

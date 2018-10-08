@@ -18,7 +18,6 @@ class BaseDriver:
         Returns:
             masonite.drivers -- Returns an instance of the driver.
         """
-
         return self._manager.driver(driver)
 
     def load_manager(self, manager):
@@ -30,6 +29,5 @@ class BaseDriver:
         Returns:
             self
         """
-
         self._manager = manager
         return self

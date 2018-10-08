@@ -29,7 +29,6 @@ class ConfirmController:
         Returns:
             [type] -- [description]
         """
-
         return view.render('auth/verify', {'app': request.app().make('Application'), 'Auth': Auth(request)})
 
     def confirm_email(self, request: Request, view: View):
@@ -42,7 +41,6 @@ class ConfirmController:
         Returns:
             [type] -- [description]
         """
-
         sign = Sign()
         token = sign.unsign(request.param('id'))
 
@@ -74,7 +72,6 @@ class ConfirmController:
         Returns:
             [User] -- [User model]
         """
-
         return User.find(id)
 
     def send_verify_email(self, request: Request):

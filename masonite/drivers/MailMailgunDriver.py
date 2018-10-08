@@ -18,7 +18,6 @@ class MailMailgunDriver(BaseMailDriver, MailContract):
         Returns:
             requests.post -- Returns the response as a requests object.
         """
-
         if not message:
             message = self.message_body
 

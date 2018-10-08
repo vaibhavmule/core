@@ -21,7 +21,6 @@ class MailSmtpDriver(BaseMailDriver, MailContract):
         Returns:
             None
         """
-
         config = self.config.DRIVERS['smtp']
 
         message = MIMEMultipart('alternative')

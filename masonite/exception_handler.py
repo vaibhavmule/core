@@ -20,7 +20,6 @@ class ExceptionHandler:
         Arguments:
             app {masonite.app.App} -- Container object
         """
-
         self._app = app
 
         self._register_static_files()
@@ -28,7 +27,6 @@ class ExceptionHandler:
     def _register_static_files(self):
         """Register static files into the container.
         """
-
         self._app.make('Storage').STATICFILES.update(
             {
                 os.path.join(package_directory, 'snippets/exceptions'):
@@ -42,7 +40,6 @@ class ExceptionHandler:
         Arguments:
             exception {Exception} -- This is the exception object thrown at runtime.
         """
-
         self._exception = exception
 
         self._render()
@@ -53,7 +50,6 @@ class ExceptionHandler:
         Returns:
             None
         """
-
         self._app.bind('StatusCode', '500 Internal Server Error')
 
         # Run Any Framework Exception Hooks

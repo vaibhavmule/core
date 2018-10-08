@@ -12,7 +12,6 @@ def set_request_method(method_type):
     Returns:
         string -- An input string.
     """
-
     return Markup("<input type='hidden' name='__method' value='{0}'>".format(method_type))
 
 
@@ -25,5 +24,4 @@ def back(location):
     Returns:
         string -- An input string.
     """
-
     return Markup("<input type='hidden' name='__back' value='{0}'>".format(location))

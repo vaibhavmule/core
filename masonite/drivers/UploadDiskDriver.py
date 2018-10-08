@@ -20,7 +20,6 @@ class UploadDiskDriver(BaseUploadDriver, UploadContract):
             StorageConfig {config.storage} -- Storage configuration.
             Application {masonite.app.App} -- The application container.
         """
-
         self.config = app.make('StorageConfig')
         self.appconfig = app.make('Application')
 
@@ -36,7 +35,6 @@ class UploadDiskDriver(BaseUploadDriver, UploadContract):
         Returns:
             string -- Returns the file name just saved.
         """
-
         filename = os.path.basename(fileitem.filename)
 
         # Check if is a valid extension
@@ -65,7 +63,6 @@ class UploadDiskDriver(BaseUploadDriver, UploadContract):
         Returns:
             string -- Returns the file name just saved.
         """
-
         filename = os.path.basename(fileitem.filename)
 
         location = self.get_location(location)

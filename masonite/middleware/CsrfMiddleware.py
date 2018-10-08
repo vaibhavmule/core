@@ -32,7 +32,6 @@ class CsrfMiddleware:
         Determine if the request has a URI that should pass
         through CSRF verification.
         """
-
         if self.request.path in self.exempt:
             return True
         else:
@@ -42,7 +41,6 @@ class CsrfMiddleware:
         """
         Verify si csrf token in post is valid.
         """
-
         if self.request.is_post() and not self.__in_exempt():
             token = self.request.input('__token')
             if not self.csrf.verify_csrf_token(token):

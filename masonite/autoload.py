@@ -22,7 +22,6 @@ class Autoload:
         Keyword Arguments:
             app {masonite.app.App} -- Container class (default: {None})
         """
-
         self.app = app
 
     def load(self, directories, instantiate=False):
@@ -38,7 +37,6 @@ class Autoload:
             ContainerError -- Thrown when the container is not loaded into the class.
             AutoloadContainerOverwrite -- Thrown when the container already has the key binding.
         """
-
         self.instantiate = instantiate
         if not self.app:
             raise ContainerError(
@@ -70,7 +68,6 @@ class Autoload:
         Returns:
             dict -- Returns a dictionary of classes it found.
         """
-
         self.instantiate = instantiate
 
         for (module_loader, name, ispkg) in pkgutil.iter_modules(directories):
@@ -100,7 +97,6 @@ class Autoload:
         Returns:
             dict -- Returns a dictionary of objects found and their key bindings.
         """
-
         self.instantiate = instantiate
 
         for (module_loader, name, ispkg) in pkgutil.iter_modules(directories):
@@ -126,7 +122,6 @@ class Autoload:
         Returns:
             object -- Returns the object being instantiated.
         """
-
         if self.instantiate:
             return obj[1]()
 
@@ -145,7 +140,6 @@ class Autoload:
         Returns:
             module -- returns the imported module.
         """
-
         search_path = module_loader.path
         if search_path.endswith('/'):
             raise InvalidAutoloadPath(

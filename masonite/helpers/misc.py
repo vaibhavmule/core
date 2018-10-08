@@ -13,7 +13,6 @@ def random_string(length=4):
     Returns:
         string
     """
-
     return "".join(
         random.choice(string.ascii_uppercase + string.digits) for _ in range(length)
     )

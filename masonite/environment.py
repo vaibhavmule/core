@@ -19,7 +19,6 @@ class LoadEnvironment:
             override {bool} -- Whether or not the environment variables found should overwrite existing ones. (default: {False})
             only {string} -- If this is set then it will only load that environment. (default: {None})
         """
-
         if only:
             self._load_environment(only, override=override)
             return
@@ -42,6 +41,5 @@ class LoadEnvironment:
         Keyword Arguments:
             override {bool} -- Whether the environment file should overwrite existing environment keys. (default: {False})
         """
-
         env_path = str(Path('.') / '.env.{}'.format(env))
         load_dotenv(dotenv_path=env_path, override=override)

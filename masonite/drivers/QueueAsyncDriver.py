@@ -17,7 +17,6 @@ class QueueAsyncDriver(QueueContract, BaseDriver):
         Arguments:
             Container {masonite.app.App} -- The application container.
         """
-
         self.container = app
 
     def push(self, *objects):
@@ -26,7 +25,6 @@ class QueueAsyncDriver(QueueContract, BaseDriver):
         Arguments:
             objects {*args of objects} - This can be several objects as parameters into this method.
         """
-
         for obj in objects:
             obj = self.container.resolve(obj)
             thread = threading.Thread(

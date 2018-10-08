@@ -20,7 +20,6 @@ class Auth:
         Keyword Arguments:
             auth_model {object} -- The model you want to authenticate with (default: {None})
         """
-
         self.request = request
 
         if auth_model:
@@ -38,7 +37,6 @@ class Auth:
         Returns:
             object|bool -- Returns the current authenticated user object or False or None if there is none.
         """
-
         try:
             if self.request.get_cookie('token'):
                 return self.auth_model.where(
@@ -64,7 +62,6 @@ class Auth:
         Returns:
             object|bool -- Returns the current authenticated user object or False or None if there is none.
         """
-
         auth_column = self.auth_model.__auth__
         try:
             model = self.auth_model.where(auth_column, name).first()
@@ -88,7 +85,6 @@ class Auth:
         Returns:
             self
         """
-
         self.request.delete_cookie('token')
         return self
 
@@ -101,7 +97,6 @@ class Auth:
         Returns:
             object|False -- Returns the current authenticated user object or False or None if there is none.
         """
-
         model = self.auth_model.find(id)
 
         if model:
@@ -120,6 +115,5 @@ class Auth:
         Returns:
             self
         """
-
         self._once = True
         return self

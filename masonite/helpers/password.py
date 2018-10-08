@@ -13,7 +13,6 @@ def password(password):
     Returns:
         string -- The encrypted string.
     """
-
     return bytes(bcrypt.hashpw(
         bytes(password, 'utf-8'), bcrypt.gensalt()
     )).decode('utf-8')

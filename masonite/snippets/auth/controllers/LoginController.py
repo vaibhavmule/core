@@ -12,7 +12,6 @@ class LoginController:
     def __init__(self):
         """LoginController Constructor.
         """
-
         pass
 
     def show(self, request: Request, view: View):
@@ -25,7 +24,6 @@ class LoginController:
         Returns:
             masonite.view.View -- Returns the Masonite view class.
         """
-
         return view.render('auth/login', {'app': request.app().make('Application'), 'Auth': Auth(request)})
 
     def store(self, request: Request):
@@ -37,7 +35,6 @@ class LoginController:
         Returns:
             masonite.request.Request -- The Masonite request class.
         """
-
         if Auth(request).login(request.input('username'), request.input('password')):
             return request.redirect('/home')
 
@@ -52,6 +49,5 @@ class LoginController:
         Returns:
             masonite.request.Request -- The Masonite request class.
         """
-
         Auth(request).logout()
         return request.redirect('/login')

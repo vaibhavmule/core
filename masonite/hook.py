@@ -14,7 +14,6 @@ class Hook:
         Arguments:
             app {masonite.app.App} -- Container object.
         """
-
         self._app = app
 
     def fire(self, search):
@@ -23,6 +22,5 @@ class Hook:
         Arguments:
             search {string} -- The search string to collect classes with.
         """
-
         for key in self._app.collect(search):
             self._app.make(key).load(self._app)

@@ -8,7 +8,6 @@ class Queueable:
     def handle(self):
         """Put the queue logic in this handle method
         """
-
         pass
 
     def dispatch(self):
@@ -17,5 +16,4 @@ class Queueable:
         Returns:
             self.handle
         """
-
         return self.handle

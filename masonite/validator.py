@@ -83,7 +83,6 @@ class Validator:
         Returns:
             string -- Returns the validation
         """
-
         if hasattr(self, "cast_{}".format(validation)):
             validation_input = self.load_request_input()[validation]
             return getattr(self, "cast_{}".format(validation))(validation_input)
@@ -99,7 +98,6 @@ class Validator:
         Returns:
             string|None
         """
-
         if error_id in self.errors():
             return self.errors()[error_id]
 
@@ -111,7 +109,6 @@ class Validator:
         Returns:
             dict -- Returns the dictionary of values to validate.
         """
-
         if self.request:
             return self.request.all().copy()
 
@@ -123,5 +120,4 @@ class Validator:
         Arguments:
             messages {dict} -- Sets a dictionary of error messages.
         """
-
         self.error_messages = messages

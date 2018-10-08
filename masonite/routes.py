@@ -27,7 +27,6 @@ class Route:
         Keyword Arguments:
             environ {dict} -- WSGI environ (default: {None})
         """
-
         self.url_list = []
 
         if environ:
@@ -46,7 +45,6 @@ class Route:
         Returns:
             self
         """
-
         self.environ = environ
         self.url = environ['PATH_INFO']
 
@@ -67,7 +65,6 @@ class Route:
         Returns:
             string
         """
-
         return output
 
     def set_post_params(self):
@@ -76,7 +73,6 @@ class Route:
         Returns:
             dict -- Dictionary of post parameters.
         """
-
         fields = None
         if self.is_not_get_request():
             if 'CONTENT_TYPE' in self.environ and 'application/json' in self.environ['CONTENT_TYPE']:
@@ -100,7 +96,6 @@ class Route:
         Returns:
             bool
         """
-
         if self.environ['REQUEST_METHOD'] == 'POST':
             return True
 
@@ -112,7 +107,6 @@ class Route:
         Returns:
             bool
         """
-
         if not self.environ['REQUEST_METHOD'] == 'GET':
             return True
 
@@ -128,7 +122,6 @@ class Route:
         Returns:
             list -- URL list.
         """
-
         return self.url_list
 
 
@@ -155,7 +148,6 @@ class BaseHttpRoute:
         Returns:
             self
         """
-
         self._find_controller(output)
         self.route_url = route
         return self
@@ -234,7 +226,6 @@ class BaseHttpRoute:
         Returns:
             self
         """
-
         self.required_domain = domain
         return self
 
@@ -247,7 +238,6 @@ class BaseHttpRoute:
         Returns:
             self
         """
-
         self.module_location = module
         return self
 
@@ -257,7 +247,6 @@ class BaseHttpRoute:
         Returns:
             bool
         """
-
         if self.request.has_subdomain() and (self.required_domain is '*' or self.request.subdomain == self.required_domain):
             return True
         return False
@@ -271,7 +260,6 @@ class BaseHttpRoute:
         Returns:
             self
         """
-
         self.named_route = name
         return self
 
@@ -284,7 +272,6 @@ class BaseHttpRoute:
         Returns:
             self
         """
-
         self.request = request
         return self
 
@@ -294,7 +281,6 @@ class BaseHttpRoute:
         Returns:
             self
         """
-
         for arg in args:
             if arg not in self.list_middleware:
                 self.list_middleware.append(arg)
@@ -310,7 +296,6 @@ class BaseHttpRoute:
         Raises:
             RouteMiddlewareNotFound -- Thrown when the middleware could not be found.
         """
-
         # Get the list of middleware to run for a route.
         for arg in self.list_middleware:
             middleware_to_run = self.request.app().make('RouteMiddleware')[arg]
@@ -335,7 +320,6 @@ class BaseHttpRoute:
         Returns:
             string -- Compiled URI string.
         """
-
         # Split the route
         split_given_route = self.route_url.split('/')
         # compile the provided url into regex
@@ -377,7 +361,6 @@ class Get(BaseHttpRoute):
     def __init__(self):
         """Get constructor
         """
-
         self.method_type = 'GET'
         self.list_middleware = []
 
@@ -389,7 +372,6 @@ class Post(BaseHttpRoute):
     def __init__(self):
         """Post constructor
         """
-
         self.method_type = 'POST'
         self.list_middleware = []
 
@@ -401,7 +383,6 @@ class Match(BaseHttpRoute):
     def __init__(self, method_type=['GET']):
         """Post constructor
         """
-
         if not isinstance(method_type, list):
             raise RouteException("Method type needs to be a list. Got '{}'".format(method_type))
 
@@ -417,7 +398,6 @@ class Put(BaseHttpRoute):
     def __init__(self):
         """Put constructor
         """
-
         self.method_type = 'PUT'
         self.list_middleware = []
 
@@ -429,7 +409,6 @@ class Patch(BaseHttpRoute):
     def __init__(self):
         """Patch constructor
         """
-
         self.method_type = 'PATCH'
         self.list_middleware = []
 
@@ -441,7 +420,6 @@ class Delete(BaseHttpRoute):
     def __init__(self):
         """Delete constructor
         """
-
         self.method_type = 'DELETE'
         self.list_middleware = []
 
@@ -485,7 +463,6 @@ class RouteGroup():
         Returns:
             list -- Returns a list of routes.
         """
-
         from masonite.helpers.routes import flatten_routes
         self.routes = flatten_routes(routes)
 
@@ -509,7 +486,6 @@ class RouteGroup():
         Returns:
             list -- Returns list of routes.
         """
-
         for route in self.routes:
             route.middleware(*middleware)
 
@@ -521,7 +497,6 @@ class RouteGroup():
         Arguments:
             domain {str|list|tuple} -- List of domains to attach to all the routes.
         """
-
         for route in self.routes:
             route.domain(domain)
 
@@ -531,7 +506,6 @@ class RouteGroup():
         Arguments:
             prefix {str} -- String to prefix to all Routes.
         """
-
         for route in self.routes:
             route.route_url = prefix + route.route_url
 
@@ -541,7 +515,6 @@ class RouteGroup():
         Arguments:
             name {str} -- String to prefix to all routes.
         """
-
         for route in self.routes:
             if isinstance(route.named_route, str):
                 route.named_route = name + route.named_route
