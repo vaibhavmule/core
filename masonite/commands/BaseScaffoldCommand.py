@@ -22,8 +22,8 @@ class BaseScaffoldCommand(Command):
     def handle(self):
         class_name = self.argument('name')
         view = View(App())
-        class_directory = self.base_directory + '{}{}{}'.format(
-            class_name, self.suffix, self.file_extension)
+        class_directory = '{}{}{}{}'.format(
+            self.base_directory, class_name, self.suffix, self.file_extension)
 
         if not make_directory(class_directory):
             return self.error('{0} Already Exists!'.format(self.scaffold_name))
