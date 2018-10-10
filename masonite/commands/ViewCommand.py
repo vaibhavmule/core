@@ -1,10 +1,10 @@
-""" New View Command """
+"""New View Command."""
 from masonite.commands import BaseScaffoldCommand
 
 
 class ViewCommand(BaseScaffoldCommand):
     """
-    Creates a view
+    Creates a view.
 
     view
         {name : Name of the view you would like to create}
