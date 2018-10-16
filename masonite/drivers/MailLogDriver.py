@@ -14,6 +14,7 @@ class MailLogDriver(BaseMailDriver, MailContract):
     """
     def __init__(self, app: App, view: View):
         super().__init__(app, view)
+
         if 'log' in self.config.DRIVERS and 'location' in self.config.DRIVERS['log']:
             log_location = self.config.DRIVERS['log']['location']
         else:
